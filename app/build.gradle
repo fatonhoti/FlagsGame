@@ -19,19 +19,29 @@ android {
     buildTypes {
         release {
             minifyEnabled false
+            shrinkResources false // Setting to true crashes application
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+
+    defaultConfig {
+        vectorDrawables.useSupportLibrary = true
+    }
+
     kotlinOptions {
         jvmTarget = '1.8'
     }
 }
 
 dependencies {
+
+    // See: https://github.com/blongho/worldCountryData
+    implementation 'com.github.blongho:worldCountryData:1.5.1'
 
     implementation 'androidx.core:core-ktx:1.7.0'
     implementation 'androidx.appcompat:appcompat:1.4.1'

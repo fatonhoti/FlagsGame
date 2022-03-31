@@ -10,5 +10,6 @@
     <color name="white">#FFFFFFFF</color>
 
     <!-- Color palette -->
+    <color name="primary_color">#03A9F4</color>
 
 </resources>
