@@ -8,141 +8,64 @@
     tools:context=".MainActivity">
 
     <TextView
-        android:id="@+id/textView"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:id="@+id/tvMainMenuHeader"
+        android:layout_width="match_parent"
+        android:layout_height="125dp"
         android:background="#0890CD"
         android:gravity="center"
-        android:text="HEADER"
+        android:text="@string/mainMenuHeader"
         android:textColor="@color/white"
         android:textSize="30sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/guideline2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_begin="125dp" />
-
     <Button
-        android:id="@+id/button3"
-        android:layout_width="0dp"
-        android:layout_height="60dp"
-        android:layout_marginTop="30dp"
+        android:id="@+id/btnMainMenuStart"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
         android:backgroundTint="@color/white"
-        android:text="start"
+        android:text="@string/btnStart"
         android:textAlignment="center"
         android:textColor="@color/primary_color"
         android:textIsSelectable="false"
-        android:textSize="25sp"
+        android:textSize="40sp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toStartOf="@+id/guideline5"
-        app:layout_constraintStart_toStartOf="@+id/guideline4"
-        app:layout_constraintTop_toTopOf="@+id/guideline2" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvMainMenuHeader" />
 
     <Button
-        android:id="@+id/button4"
-        android:layout_width="0dp"
-        android:layout_height="60dp"
+        android:id="@+id/btnMainMenuSettings"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
         android:backgroundTint="@color/white"
-        android:text="about"
+        android:text="@string/btnSettings"
         android:textAlignment="center"
         android:textColor="@color/primary_color"
         android:textIsSelectable="false"
-        android:textSize="25sp"
+        android:textSize="40sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/button5"
-        app:layout_constraintEnd_toStartOf="@+id/guideline5"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/guideline4"
-        app:layout_constraintTop_toBottomOf="@+id/button3" />
-
-    <Button
-        android:id="@+id/button5"
-        android:layout_width="0dp"
-        android:layout_height="60dp"
-        android:backgroundTint="@color/white"
-        android:text="Settings"
-        android:textAlignment="center"
-        android:textColor="@color/primary_color"
-        android:textIsSelectable="false"
-        android:textSize="25sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/guideline3"
-        app:layout_constraintEnd_toStartOf="@+id/guideline5"
-        app:layout_constraintStart_toStartOf="@+id/guideline4" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_begin="379dp" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline6"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_begin="440dp" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_begin="80dp" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_begin="320dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnMainMenuStart" />
 
     <ImageView
-        android:id="@+id/main_menu_flag"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="20dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/guideline5"
-        app:layout_constraintHorizontal_bias="0.625"
-        app:layout_constraintStart_toStartOf="@+id/guideline4"
-        tools:srcCompat="@tools:sample/avatars" />
-
-    <TextView
-        android:id="@+id/tvCountryName"
-        android:layout_width="0dp"
+        android:id="@+id/ivMainMenuImage"
+        android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:text="Country"
-        android:textAlignment="center"
-        android:textColor="@color/white"
-        android:textSize="26sp"
-        android:textStyle="bold"
-        android:gravity="center"
-        app:layout_constraintBottom_toTopOf="@+id/main_menu_flag"
-        app:layout_constraintEnd_toStartOf="@+id/guideline5"
-        app:layout_constraintHorizontal_bias="0.533"
-        app:layout_constraintStart_toStartOf="@+id/guideline4"
-        app:layout_constraintTop_toBottomOf="@+id/divider2"
-        app:layout_constraintVertical_bias="0.47" />
-
-    <View
-        android:id="@+id/divider2"
-        android:layout_width="411dp"
-        android:layout_height="5dp"
-        android:layout_marginTop="15dp"
-        android:background="?android:attr/listDivider"
-        app:layout_constraintBottom_toTopOf="@+id/guideline6"
+        android:layout_marginTop="50dp"
+        android:contentDescription="@string/ivDesc_CountryFlags"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.492"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guideline3" />
+        app:layout_constraintTop_toBottomOf="@+id/btnMainMenuSettings"
+        app:srcCompat="@drawable/countryflags"
+        tools:ignore="ImageContrastCheck" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

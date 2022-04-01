@@ -1,3 +1,20 @@
 <resources>
     <string name="app_name">Flags</string>
+
+    <!-- ACTIVITY: MainActivity -->
+    <string name="mainMenuHeader">HEADER</string>
+    <string name="btnStart">start</string>
+    <string name="btnAbout">ABOUT</string>
+    <string name="btnSettings">SETTINGS</string>
+    <string name="ivDesc_CountryFlags">Country Flags</string>
+
+    <!-- ACTIVITY: GameMenuActivity -->
+    <string name="GameMenuTitle">Select a region</string>
+    <string name="GameMenuChoiceWorld">World</string>
+    <string name="GameMenuChoiceEuropean">Europe</string>
+    <string name="GameMenuChoiceAsian">Asia</string>
+    <string name="GameMenuChoiceAfrica">Africa</string>
+    <string name="GameMenuChoiceNorthAmerica">North America</string>
+    <string name="GameMenuChoiceSouthAmerica">South America</string>
+
 </resources>

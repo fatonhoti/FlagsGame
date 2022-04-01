@@ -1,0 +1,79 @@
+package com.fatonhoti.flags
+
+import android.content.Intent
+import android.os.Bundle
+import android.util.Log
+import android.widget.Button
+import android.widget.SeekBar
+import android.widget.SeekBar.OnSeekBarChangeListener
+import android.widget.TextView
+import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
+import com.blongho.country_data.Country
+import com.blongho.country_data.World
+import java.io.Serializable
+import java.lang.Exception
+
+
+class GameLobbyActivity : AppCompatActivity() {
+
+    private var resumed = 0
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_game_lobby)
+
+        // Fetch all the countries of the region
+        var region = intent.getStringExtra("REGION")!!.uppercase()
+        var countries: ArrayList<Country>
+        if(region == "World") {
+            countries = World.getAllCountries() as ArrayList
+        } else {
+            val fst = region.substring(0,1)
+            if (fst == "N" || fst == "S") {
+                // Need to add "_" between "North/South America" so API understands string
+                region = region.substring(0,5) + "_AMERICA"
+            }
+            countries = World.getCountriesFrom(World.Continent.valueOf(region)) as ArrayList<Country>
+        }
+
+        // Fetch max flags the user wants to learn
+        var flagCount: Int = countries.size
+        val tvFlagCount = findViewById<TextView>(R.id.tvFlagCount)
+        val sbFlagCount = findViewById<SeekBar>(R.id.sbAmountFlags)
+        sbFlagCount.max = countries.size
+        sbFlagCount.setOnSeekBarChangeListener(object : OnSeekBarChangeListener {
+            override fun onStopTrackingTouch(seekBar: SeekBar) { }
+            override fun onStartTrackingTouch(seekBar: SeekBar) { }
+            override fun onProgressChanged(seekBar: SeekBar, progress: Int, fromUser: Boolean) {
+                flagCount = progress
+                tvFlagCount.text = flagCount.toString()
+            }
+        })
+
+        // Start game
+        val btnStart = findViewById<Button>(R.id.btnGameLobbyStart)
+        btnStart.setOnClickListener() {
+            Intent(this, GameActivity::class.java).also{
+                try {
+                    //it.putExtra("COUNTRIES", countries)
+                    it.putExtra("MAX", flagCount)
+                    startActivity(it)
+                } catch (e: Exception) {
+                    Log.e("errr", e.toString())
+                }
+            }
+        }
+
+    }
+
+    override fun onResume() {
+        super.onResume()
+        if(resumed > 0) {
+            finish()
+        } else {
+            resumed++
+        }
+    }
+
+}
