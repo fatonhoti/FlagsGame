@@ -27,6 +27,11 @@ class GameMenuActivity : AppCompatActivity() {
             }
         }
 
+        val btnGoBack = findViewById<Button>(R.id.btnGoBack)
+        btnGoBack.setOnClickListener {
+            finish()
+        }
+
     }
 
 }

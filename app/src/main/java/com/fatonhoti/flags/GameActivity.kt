@@ -80,6 +80,7 @@ class GameActivity : AppCompatActivity() {
                             // TODO: Pass on relevant data (correct, incorrect, time?, etc.)
                             it.putExtra("correctGuesses", correctGuesses)
                             it.putExtra("incorrectGuesses", incorrectGuesses)
+                            it.putExtra("region", countries[0].continent)
                             startActivity(it)
                         }
                     } else {

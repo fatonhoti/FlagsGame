@@ -16,5 +16,12 @@
     <string name="GameMenuChoiceAfrica">Africa</string>
     <string name="GameMenuChoiceNorthAmerica">North America</string>
     <string name="GameMenuChoiceSouthAmerica">South America</string>
+    <string name="GoBack">Go Back</string>
+
+    <!-- ACTIVITY: GameOver -->
+    <string name="GameOver">Game Over</string>
+    <string name="CorrectGuesses">Correct</string>
+    <string name="IncorrectGuesses">Incorrect</string>
+    <string name="btnMainMenu">Main Menu</string>
 
 </resources>
