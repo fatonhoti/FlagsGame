@@ -4,10 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
-import android.widget.ImageView
-import android.widget.TextView
 import com.blongho.country_data.World
-import java.util.*
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -18,12 +15,12 @@ class MainActivity : AppCompatActivity() {
         World.init(applicationContext)
 
         val btnStart = findViewById<Button>(R.id.mm_btnStart)
-        btnStart.setOnClickListener() {
+        btnStart.setOnClickListener {
             startActivity(Intent(this, GameMenuActivity::class.java))
         }
 
         val btnSettings = findViewById<Button>(R.id.mm_btnSettings)
-        btnSettings.setOnClickListener() {
+        btnSettings.setOnClickListener {
             startActivity(Intent(this, SettingsActivity::class.java))
         }
 

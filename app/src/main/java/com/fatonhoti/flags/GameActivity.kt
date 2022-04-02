@@ -16,7 +16,6 @@ import java.util.concurrent.ThreadLocalRandom
 
 class GameActivity : AppCompatActivity() {
 
-    private var resumed = 0
     private var correctGuesses = 0
     private var incorrectGuesses = 0
 
@@ -29,8 +28,14 @@ class GameActivity : AppCompatActivity() {
         val max = intent.getIntExtra("MAX", 1)
 
         // Fetch countries of the user selected region
-        //val countries = intent.getSerializableExtra("COUNTRIES") as ArrayList<Country>
-        val countries = World.getCountriesFrom(World.Continent.ASIA)
+        //val countries = intent.getSerializableExtra("COUNTRIES")
+        //val countries = World.getCountriesFrom(World.Continent.ASIA)
+        val countries = World.getAllCountries()
+        Log.i("GAME", "===============================")
+        Log.i("GAME", countries.toString())
+        Log.i("GAME", countries.size.toString())
+        Log.i("GAME", max.toString())
+        Log.i("GAME", "===============================")
 
         // Select 'max' amount of countries at random
         val selectedCountries = pickNRandomElements(countries, max)!!
@@ -83,7 +88,7 @@ class GameActivity : AppCompatActivity() {
                             it.putExtra("correctGuesses", correctGuesses)
                             it.putExtra("incorrectGuesses", incorrectGuesses)
                             it.putExtra("region", countries[0].continent)
-                            it.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK)
+                            //it.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK)
                             startActivity(it)
                             finish()
                         }

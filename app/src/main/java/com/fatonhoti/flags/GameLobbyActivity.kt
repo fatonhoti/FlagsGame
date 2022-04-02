@@ -7,17 +7,13 @@ import android.widget.Button
 import android.widget.SeekBar
 import android.widget.SeekBar.OnSeekBarChangeListener
 import android.widget.TextView
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.blongho.country_data.Country
 import com.blongho.country_data.World
-import java.io.Serializable
 import java.lang.Exception
 
 
 class GameLobbyActivity : AppCompatActivity() {
-
-    private var resumed = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -46,14 +42,18 @@ class GameLobbyActivity : AppCompatActivity() {
             override fun onStopTrackingTouch(seekBar: SeekBar) { }
             override fun onStartTrackingTouch(seekBar: SeekBar) { }
             override fun onProgressChanged(seekBar: SeekBar, progress: Int, fromUser: Boolean) {
-                flagCount = 1 + progress
+                flagCount = if(progress == 0 || progress != countries.size) {
+                    progress + 1
+                } else {
+                    progress
+                }
                 tvFlagCount.text = flagCount.toString()
             }
         })
 
         // Start game
         val btnStart = findViewById<Button>(R.id.btnGameLobbyStart)
-        btnStart.setOnClickListener() {
+        btnStart.setOnClickListener {
             Intent(this, GameActivity::class.java).also{
                 try {
                     //it.putExtra("COUNTRIES", countries)
@@ -61,7 +61,7 @@ class GameLobbyActivity : AppCompatActivity() {
                     startActivity(it)
                     finish()
                 } catch (e: Exception) {
-                    Log.e("errr", e.toString())
+                    Log.e("GameLobbyError", e.toString())
                 }
             }
         }
