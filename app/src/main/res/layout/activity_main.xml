@@ -4,68 +4,56 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/primary_color"
+    android:background="#EEF4FF"
     tools:context=".MainActivity">
 
-    <TextView
-        android:id="@+id/tvMainMenuHeader"
-        android:layout_width="match_parent"
-        android:layout_height="125dp"
-        android:background="#0890CD"
-        android:gravity="center"
-        android:text="@string/mainMenuHeader"
-        android:textColor="@color/white"
-        android:textSize="30sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/btnMainMenuStart"
-        android:layout_width="300dp"
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline9"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
-        android:backgroundTint="@color/white"
-        android:text="@string/btnStart"
-        android:textAlignment="center"
-        android:textColor="@color/black"
-        android:textIsSelectable="false"
-        android:textSize="40sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvMainMenuHeader" />
-
-    <Button
-        android:id="@+id/btnMainMenuSettings"
-        android:layout_width="300dp"
-        android:layout_height="wrap_content"
-        android:backgroundTint="@color/white"
-        android:text="@string/btnSettings"
-        android:textAlignment="center"
-        android:textColor="@color/black"
-        android:textIsSelectable="false"
-        android:textSize="40sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnMainMenuStart" />
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.75" />
 
     <ImageView
-        android:id="@+id/ivMainMenuImage"
-        android:layout_width="match_parent"
+        android:id="@+id/imageView"
+        android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginTop="50dp"
-        android:contentDescription="@string/ivDesc_CountryFlags"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:contentDescription="@string/mm_image_description"
+        app:layout_constraintBottom_toTopOf="@+id/mm_btnStart"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.492"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnMainMenuSettings"
-        app:srcCompat="@drawable/countryflags"
-        tools:ignore="ImageContrastCheck" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/country_globe" />
 
+    <Button
+        android:id="@+id/mm_btnStart"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#629677"
+        android:fontFamily="@font/raleway_bold"
+        android:text="@string/mm_btnStart"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        android:textSize="40sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline9" />
+
+    <Button
+        android:id="@+id/mm_btnSettings"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#629677"
+        android:fontFamily="@font/raleway_bold"
+        android:text="@string/mm_btnSettings"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        android:textSize="40sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mm_btnStart" />
 </androidx.constraintlayout.widget.ConstraintLayout>

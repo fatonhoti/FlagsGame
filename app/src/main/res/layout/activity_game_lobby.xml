@@ -42,12 +42,17 @@
         android:layout_height="50dp"
         android:max="10"
         android:progress="5"
+        android:progressBackgroundTint="#629677"
+        android:progressTint="#629677"
+        android:scrollbarSize="6dp"
+        android:thumbTint="#629677"
         app:layout_constraintBottom_toTopOf="@+id/guideline2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.504"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvGameLobbyTitle"
-        app:layout_constraintVertical_bias="0.752" />
+        app:layout_constraintVertical_bias="0.752"
+        app:tickMarkTint="#F5F7FF" />
 
     <TextView
         android:id="@+id/tvFlagCount"
@@ -67,9 +72,9 @@
         android:id="@+id/btnGameLobbyStart"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/btnStart"
+        android:backgroundTint="#629677"
+        android:text="@string/GL_START"
         android:textAlignment="center"
-        android:textColor="#0A090C"
         android:textSize="30sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"

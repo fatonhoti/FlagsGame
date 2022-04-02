@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F5F7FF"
+    android:background="#EEF4FF"
     tools:context=".GameActivity">
 
     <ImageView
@@ -30,66 +30,59 @@
 
     <Button
         android:id="@+id/btnChoiceOne"
-        android:layout_width="157dp"
-        android:layout_height="132dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="20dp"
+        android:layout_width="300dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="25dp"
+        android:backgroundTint="#629677"
         android:textAlignment="center"
-        android:textColor="#000000"
         android:textSize="25sp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toStartOf="@+id/guideline3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/guideline2"
         tools:ignore="SpeakableTextPresentCheck" />
 
     <Button
         android:id="@+id/btnChoiceTwo"
-        android:layout_width="157dp"
-        android:layout_height="132dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="20dp"
+        android:layout_width="300dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="10dp"
+        android:backgroundTint="#629677"
         android:textAlignment="center"
-        android:textColor="#000000"
         android:textSize="25sp"
         android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="@+id/guideline3"
-        app:layout_constraintTop_toTopOf="@+id/guideline2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnChoiceOne"
         tools:ignore="SpeakableTextPresentCheck" />
 
     <Button
         android:id="@+id/btnChoiceFour"
-        android:layout_width="157dp"
-        android:layout_height="132dp"
-        android:layout_marginStart="20dp"
+        android:layout_width="300dp"
+        android:layout_height="60dp"
         android:layout_marginTop="10dp"
+        android:backgroundTint="#629677"
         android:textAlignment="center"
-        android:textColor="#000000"
         android:textSize="25sp"
         android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="@+id/guideline3"
-        app:layout_constraintTop_toBottomOf="@+id/btnChoiceTwo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnChoiceThree"
         tools:ignore="SpeakableTextPresentCheck" />
 
     <Button
         android:id="@+id/btnChoiceThree"
-        android:layout_width="157dp"
-        android:layout_height="132dp"
+        android:layout_width="300dp"
+        android:layout_height="60dp"
         android:layout_marginTop="10dp"
-        android:layout_marginEnd="20dp"
+        android:backgroundTint="#629677"
         android:textAlignment="center"
-        android:textColor="#000000"
         android:textSize="25sp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toStartOf="@+id/guideline3"
-        app:layout_constraintTop_toBottomOf="@+id/btnChoiceOne"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnChoiceTwo"
         tools:ignore="SpeakableTextPresentCheck" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.5" />
 
     <TextView
         android:id="@+id/tvCountriesLeft"

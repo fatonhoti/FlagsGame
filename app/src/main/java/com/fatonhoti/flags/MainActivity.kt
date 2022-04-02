@@ -14,12 +14,17 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        //
+        // Load in resources from API
         World.init(applicationContext)
 
-        val btnMainMenuStart = findViewById<Button>(R.id.btnMainMenuStart)
-        btnMainMenuStart.setOnClickListener() {
+        val btnStart = findViewById<Button>(R.id.mm_btnStart)
+        btnStart.setOnClickListener() {
             startActivity(Intent(this, GameMenuActivity::class.java))
+        }
+
+        val btnSettings = findViewById<Button>(R.id.mm_btnSettings)
+        btnSettings.setOnClickListener() {
+            startActivity(Intent(this, SettingsActivity::class.java))
         }
 
     }

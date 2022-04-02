@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F5F7FF"
+    android:background="#EEF4FF"
     tools:context=".GameOverActivity">
 
     <TextView
@@ -103,9 +103,9 @@
         android:id="@+id/btnMainMenu"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:backgroundTint="#629677"
         android:text="@string/btnDone"
         android:textAlignment="center"
-        android:textColor="#000000"
         android:textSize="40sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"

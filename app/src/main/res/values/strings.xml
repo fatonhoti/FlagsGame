@@ -2,11 +2,9 @@
     <string name="app_name">Flags</string>
 
     <!-- ACTIVITY: MainActivity -->
-    <string name="mainMenuHeader">HEADER</string>
-    <string name="btnStart">start</string>
-    <string name="btnAbout">ABOUT</string>
-    <string name="btnSettings">SETTINGS</string>
-    <string name="ivDesc_CountryFlags">Country Flags</string>
+    <string name="mm_image_description">A globe of country flags</string>
+    <string name="mm_btnStart">Start</string>
+    <string name="mm_btnSettings">Settings</string>
 
     <!-- ACTIVITY: GameMenuActivity -->
     <string name="GameMenuTitle">Select a region</string>
@@ -16,10 +14,12 @@
     <string name="GameMenuChoiceAfrica">Africa</string>
     <string name="GameMenuChoiceNorthAmerica">North America</string>
     <string name="GameMenuChoiceSouthAmerica">South America</string>
+    <string name="GameMenuChoiceOceania">Oceania</string>
     <string name="GoBack">Go Back</string>
 
     <!-- ACTIVITY: GameLobbyActivity -->
     <string name="defaultCount">1</string>
+    <string name="GL_START">Start</string>
 
     <!-- ACTIVITY: GameActivity -->
     <string name="GameImageDescription">Flag of a country that user must guess</string>
