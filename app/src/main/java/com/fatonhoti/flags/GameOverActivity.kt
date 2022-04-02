@@ -1,16 +1,19 @@
 package com.fatonhoti.flags
 
+import android.annotation.SuppressLint
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
 
 class GameOverActivity : AppCompatActivity() {
+    @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_game_over)
 
+        // Display fun information
         val region = intent.getStringExtra("region")
         val tvRegion = findViewById<TextView>(R.id.tvRegion)
         tvRegion.text = "Region: $region"
@@ -25,7 +28,11 @@ class GameOverActivity : AppCompatActivity() {
 
         val btnMainMenu = findViewById<Button>(R.id.btnMainMenu)
         btnMainMenu.setOnClickListener {
-            finish()
+            // Return back to GameMenuActivity
+            Intent(this, GameMenuActivity::class.java).also {
+                it.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_CLEAR_TASK)
+                startActivity(it)
+            }
         }
 
     }

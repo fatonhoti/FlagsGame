@@ -25,20 +25,20 @@ class GameLobbyActivity : AppCompatActivity() {
 
         // Fetch all the countries of the region
         var region = intent.getStringExtra("REGION")!!.uppercase()
-        var countries: ArrayList<Country>
-        if(region == "World") {
-            countries = World.getAllCountries() as ArrayList
+        val countries: MutableList<Country>
+        if(region == "WORLD") {
+            countries = World.getAllCountries()
         } else {
             val fst = region.substring(0,1)
             if (fst == "N" || fst == "S") {
                 // Need to add "_" between "North/South America" so API understands string
                 region = region.substring(0,5) + "_AMERICA"
             }
-            countries = World.getCountriesFrom(World.Continent.valueOf(region)) as ArrayList<Country>
+            countries = World.getCountriesFrom(World.Continent.valueOf(region))
         }
 
         // Fetch max flags the user wants to learn
-        var flagCount: Int = countries.size
+        var flagCount = 1
         val tvFlagCount = findViewById<TextView>(R.id.tvFlagCount)
         val sbFlagCount = findViewById<SeekBar>(R.id.sbAmountFlags)
         sbFlagCount.max = countries.size
@@ -46,7 +46,7 @@ class GameLobbyActivity : AppCompatActivity() {
             override fun onStopTrackingTouch(seekBar: SeekBar) { }
             override fun onStartTrackingTouch(seekBar: SeekBar) { }
             override fun onProgressChanged(seekBar: SeekBar, progress: Int, fromUser: Boolean) {
-                flagCount = progress
+                flagCount = 1 + progress
                 tvFlagCount.text = flagCount.toString()
             }
         })
@@ -65,15 +65,6 @@ class GameLobbyActivity : AppCompatActivity() {
             }
         }
 
-    }
-
-    override fun onResume() {
-        super.onResume()
-        if(resumed > 0) {
-            finish()
-        } else {
-            resumed++
-        }
     }
 
 }

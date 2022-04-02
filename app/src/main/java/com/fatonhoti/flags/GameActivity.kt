@@ -50,6 +50,8 @@ class GameActivity : AppCompatActivity() {
         // ===== Generate starting country
 
         // Take one country at random to be the country to guess
+        tvCountriesLeft.text = "Left: " + selectedCountries.size.toString()
+
         var startingCountry = pickCountry(countries, selectedCountries)
         ivFlagToGuess.setImageResource(World.getFlagOf(startingCountry.id))
 
@@ -98,15 +100,6 @@ class GameActivity : AppCompatActivity() {
         }
     }
 
-    override fun onResume() {
-        super.onResume()
-        if(resumed > 0) {
-            finish()
-        } else {
-            resumed++
-        }
-    }
-
     private fun pickCountry(countries: MutableList<Country>, selectedCountries: MutableList<Country>): Country {
         val country = pickNRandomElements(selectedCountries, 1)!![0]
         selectedCountries.remove(country)
@@ -115,10 +108,11 @@ class GameActivity : AppCompatActivity() {
     }
 
     private fun setChoices(btnChoices: List<Button>, countries: MutableList<Country>, country: Country) {
-        val choices = pickNRandomElements(countries, 4)!!
+        val choices = pickNRandomElements(countries, 3)!!
         val randIndex = ThreadLocalRandom.current().nextInt(4)
         for(i in 0 until choices.size) {
             if (i == randIndex) {
+                // At least one of the choices must be the actually correct one
                 btnChoices[i].text = country.name
             } else {
                 btnChoices[i].text = choices[i].name

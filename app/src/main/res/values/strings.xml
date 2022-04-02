@@ -18,10 +18,17 @@
     <string name="GameMenuChoiceSouthAmerica">South America</string>
     <string name="GoBack">Go Back</string>
 
-    <!-- ACTIVITY: GameOver -->
+    <!-- ACTIVITY: GameLobbyActivity -->
+    <string name="defaultCount">1</string>
+
+    <!-- ACTIVITY: GameActivity -->
+    <string name="GameImageDescription">Flag of a country that user must guess</string>
+
+    <!-- ACTIVITY: GameOverActivity -->
     <string name="GameOver">Game Over</string>
     <string name="CorrectGuesses">Correct</string>
     <string name="IncorrectGuesses">Incorrect</string>
     <string name="btnMainMenu">Main Menu</string>
+    <string name="GameLobbyTitle">How many flags do you want to learn?</string>
 
 </resources>

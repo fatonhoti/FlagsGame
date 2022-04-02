@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#F5F7FF"
     tools:context=".GameLobbyActivity">
 
     <androidx.constraintlayout.widget.Guideline
@@ -21,11 +22,12 @@
         app:layout_constraintGuide_percent="0.5" />
 
     <TextView
-        android:id="@+id/tv1"
+        android:id="@+id/tvGameLobbyTitle"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:text="How many flags do you want to learn?"
+        android:text="@string/GameLobbyTitle"
         android:textAlignment="center"
+        android:textColor="#000000"
         android:textSize="30sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/guideline2"
@@ -44,21 +46,22 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.504"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv1"
+        app:layout_constraintTop_toBottomOf="@+id/tvGameLobbyTitle"
         app:layout_constraintVertical_bias="0.752" />
 
     <TextView
         android:id="@+id/tvFlagCount"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="5"
+        android:text="@string/defaultCount"
         android:textAlignment="center"
+        android:textColor="#000000"
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/sbAmountFlags"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv1" />
+        app:layout_constraintTop_toBottomOf="@+id/tvGameLobbyTitle" />
 
     <Button
         android:id="@+id/btnGameLobbyStart"
@@ -66,6 +69,7 @@
         android:layout_height="wrap_content"
         android:text="@string/btnStart"
         android:textAlignment="center"
+        android:textColor="#0A090C"
         android:textSize="30sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
