@@ -30,8 +30,9 @@ class GameOverActivity : AppCompatActivity() {
         btnMainMenu.setOnClickListener {
             // Return back to GameMenuActivity
             Intent(this, GameMenuActivity::class.java).also {
-                it.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_CLEAR_TASK)
+                //it.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_CLEAR_TASK)
                 startActivity(it)
+                finish()
             }
         }
 

@@ -26,12 +26,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.5" />
+        app:layout_constraintGuide_percent="0.4" />
 
     <Button
         android:id="@+id/btnChoiceOne"
         android:layout_width="300dp"
-        android:layout_height="60dp"
+        android:layout_height="80dp"
         android:layout_marginTop="25dp"
         android:backgroundTint="#629677"
         android:textAlignment="center"
@@ -45,7 +45,7 @@
     <Button
         android:id="@+id/btnChoiceTwo"
         android:layout_width="300dp"
-        android:layout_height="60dp"
+        android:layout_height="80dp"
         android:layout_marginTop="10dp"
         android:backgroundTint="#629677"
         android:textAlignment="center"
@@ -59,7 +59,7 @@
     <Button
         android:id="@+id/btnChoiceFour"
         android:layout_width="300dp"
-        android:layout_height="60dp"
+        android:layout_height="80dp"
         android:layout_marginTop="10dp"
         android:backgroundTint="#629677"
         android:textAlignment="center"
@@ -73,7 +73,7 @@
     <Button
         android:id="@+id/btnChoiceThree"
         android:layout_width="300dp"
-        android:layout_height="60dp"
+        android:layout_height="80dp"
         android:layout_marginTop="10dp"
         android:backgroundTint="#629677"
         android:textAlignment="center"

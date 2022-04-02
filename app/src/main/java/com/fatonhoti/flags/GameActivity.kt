@@ -83,7 +83,9 @@ class GameActivity : AppCompatActivity() {
                             it.putExtra("correctGuesses", correctGuesses)
                             it.putExtra("incorrectGuesses", incorrectGuesses)
                             it.putExtra("region", countries[0].continent)
+                            it.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK)
                             startActivity(it)
+                            finish()
                         }
                     } else {
                         // Set new flag to guess

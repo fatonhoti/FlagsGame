@@ -23,6 +23,7 @@ class GameMenuActivity : AppCompatActivity() {
                 Intent(this, GameLobbyActivity::class.java).also {
                     it.putExtra("REGION", btnView.text.toString())
                     startActivity(it)
+                    finish()
                 }
             }
         }

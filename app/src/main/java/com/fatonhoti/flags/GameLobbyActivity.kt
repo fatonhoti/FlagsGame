@@ -59,6 +59,7 @@ class GameLobbyActivity : AppCompatActivity() {
                     //it.putExtra("COUNTRIES", countries)
                     it.putExtra("MAX", flagCount)
                     startActivity(it)
+                    finish()
                 } catch (e: Exception) {
                     Log.e("errr", e.toString())
                 }
