@@ -108,7 +108,7 @@ class GameActivity : AppCompatActivity() {
     }
 
     private fun setChoices(btnChoices: List<Button>, countries: MutableList<Country>, country: Country) {
-        val choices = pickNRandomElements(countries, 3)!!
+        val choices = pickNRandomElements(countries, 4)!!
         val randIndex = ThreadLocalRandom.current().nextInt(4)
         for(i in 0 until choices.size) {
             if (i == randIndex) {

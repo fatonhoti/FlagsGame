@@ -103,7 +103,7 @@
         android:id="@+id/btnMainMenu"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/btnMainMenu"
+        android:text="@string/btnDone"
         android:textAlignment="center"
         android:textColor="#000000"
         android:textSize="40sp"
