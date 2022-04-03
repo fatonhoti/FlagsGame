@@ -42,7 +42,7 @@ class GameLobbyActivity : AppCompatActivity() {
             override fun onStopTrackingTouch(seekBar: SeekBar) { }
             override fun onStartTrackingTouch(seekBar: SeekBar) { }
             override fun onProgressChanged(seekBar: SeekBar, progress: Int, fromUser: Boolean) {
-                flagCount = if(progress == 0 || progress != countries.size) {
+                flagCount = if(progress == 0) {
                     progress + 1
                 } else {
                     progress

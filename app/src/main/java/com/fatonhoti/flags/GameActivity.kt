@@ -18,29 +18,12 @@ class GameActivity : AppCompatActivity() {
 
     private var correctGuesses = 0
     private var incorrectGuesses = 0
+    private var usedCountries = HashSet<Country>()
 
     @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_game)
-
-        // ===== Fetch information from game lobby
-        val max = intent.getIntExtra("MAX", 1)
-
-        // Fetch countries of the user selected region
-        //val countries = intent.getSerializableExtra("COUNTRIES")
-        //val countries = World.getCountriesFrom(World.Continent.ASIA)
-        val countries = World.getAllCountries()
-        Log.i("GAME", "===============================")
-        Log.i("GAME", countries.toString())
-        Log.i("GAME", countries.size.toString())
-        Log.i("GAME", max.toString())
-        Log.i("GAME", "===============================")
-
-        // Select 'max' amount of countries at random
-        val selectedCountries = pickNRandomElements(countries, max)!!
-
-        // ===== Run  the game
 
         // Fetch used views
         val ivFlagToGuess = findViewById<ImageView>(R.id.ivFlagToGuess)
@@ -52,12 +35,22 @@ class GameActivity : AppCompatActivity() {
             findViewById(R.id.btnChoiceFour)
         )
 
+        // ===== Fetch information from game lobby
+        val max = intent.getIntExtra("MAX", 1)
+
+        // ===== Fetch countries of the user selected region
+        //val countries = intent.getSerializableExtra("COUNTRIES")
+        //val countries = World.getCountriesFrom(World.Continent.ASIA)
+        val countries = World.getAllCountries()
+
         // ===== Generate starting country
 
-        // Take one country at random to be the country to guess
+        // Select 'max' countries at random
+        val selectedCountries = pickNRandomElements(countries, max)!!
         tvCountriesLeft.text = "Left: " + selectedCountries.size.toString()
 
-        var startingCountry = pickCountry(countries, selectedCountries)
+        // Take one country at random to be the country to guess
+        val startingCountry = pickCountry(selectedCountries)
         ivFlagToGuess.setImageResource(World.getFlagOf(startingCountry.id))
 
         // Take four countries at random to display as choices
@@ -78,39 +71,36 @@ class GameActivity : AppCompatActivity() {
                         // TODO: Make guess button red to indicate incorrect
                     }
 
-                    // Update count
-                    tvCountriesLeft.text = "Left: ${selectedCountries.size}"
-
                     // If cycled through all
                     if(selectedCountries.isEmpty()) {
                         Intent(this, GameOverActivity::class.java).also {
-                            // TODO: Pass on relevant data (correct, incorrect, time?, etc.)
                             it.putExtra("correctGuesses", correctGuesses)
                             it.putExtra("incorrectGuesses", incorrectGuesses)
                             it.putExtra("region", countries[0].continent)
-                            //it.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK)
                             startActivity(it)
                             finish()
                         }
                     } else {
                         // Set new flag to guess
-                        startingCountry = pickCountry(countries, selectedCountries)
-                        ivFlagToGuess.setImageResource(World.getFlagOf(startingCountry.id))
+                        val newCountry = pickCountry(selectedCountries)
+                        ivFlagToGuess.setImageResource(World.getFlagOf(newCountry.id))
+
+                        // Update count
+                        tvCountriesLeft.text = "Left: ${selectedCountries.size}"
 
                         // Generate new choices
-                        setChoices(btnChoices, countries, startingCountry)
+                        setChoices(btnChoices, countries, newCountry)
                     }
                 } catch(e: Exception) {
-                    Log.e("GAME", e.toString())
+                    Log.e("GAME", e.stackTraceToString())
                 }
             }
         }
     }
 
-    private fun pickCountry(countries: MutableList<Country>, selectedCountries: MutableList<Country>): Country {
-        val country = pickNRandomElements(selectedCountries, 1)!![0]
+    private fun pickCountry(selectedCountries: MutableList<Country>): Country {
+        val country = selectedCountries[ThreadLocalRandom.current().nextInt(selectedCountries.size)]
         selectedCountries.remove(country)
-        countries.remove(country)
         return country
     }
 
@@ -135,7 +125,15 @@ class GameActivity : AppCompatActivity() {
         for (i in length - 1 downTo length - n) {
             Collections.swap(list, i, r.nextInt(i + 1))
         }
-        return list.subList(length - n, length)
+        val sublist = list.subList(length - n, length)
+
+        // Make a unique copy
+        val copy = mutableListOf<Country>()
+        sublist.forEach {
+            copy.add(it)
+        }
+        return copy
+
     }
 
     private fun pickNRandomElements(list: MutableList<Country>, n: Int) : MutableList<Country>? {
