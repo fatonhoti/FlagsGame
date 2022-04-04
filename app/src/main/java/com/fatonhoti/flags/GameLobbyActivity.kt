@@ -2,8 +2,6 @@ package com.fatonhoti.flags
 
 import android.content.Intent
 import android.os.Bundle
-import android.os.Parcelable
-import android.util.Log
 import android.widget.Button
 import android.widget.SeekBar
 import android.widget.SeekBar.OnSeekBarChangeListener
@@ -11,7 +9,6 @@ import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.blongho.country_data.Country
 import com.blongho.country_data.World
-import java.lang.Exception
 import java.util.ArrayList
 
 
@@ -59,14 +56,10 @@ class GameLobbyActivity : AppCompatActivity() {
         val btnStart = findViewById<Button>(R.id.btnGameLobbyStart)
         btnStart.setOnClickListener {
             Intent(this, GameActivity::class.java).also{
-                try {
-                    it.putParcelableArrayListExtra("COUNTRIES", ArrayList(countries))
-                    it.putExtra("MAX", flagCount)
-                    startActivity(it)
-                    finish()
-                } catch (e: Exception) {
-                    Log.e("GameLobbyError", e.toString())
-                }
+                it.putParcelableArrayListExtra("COUNTRIES", ArrayList(countries))
+                it.putExtra("MAX", flagCount)
+                startActivity(it)
+                finish()
             }
         }
 

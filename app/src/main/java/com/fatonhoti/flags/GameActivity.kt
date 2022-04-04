@@ -3,14 +3,12 @@ package com.fatonhoti.flags
 import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.blongho.country_data.Country
 import com.blongho.country_data.World
-import java.lang.Exception
 import java.util.*
 import java.util.concurrent.ThreadLocalRandom
 
@@ -60,33 +58,29 @@ class GameActivity : AppCompatActivity() {
         // ===== Setup event listeners
         btnChoices.forEach { btn ->
             btn.setOnClickListener {
-                try {
-                    val guess = btn.text.toString()
-                    if(guess == countryToGuess.name) {
-                        correctGuesses++
-                    } else {
-                        incorrectGuesses++
-                    }
+                val guess = btn.text.toString()
+                if(guess == countryToGuess.name) {
+                    correctGuesses++
+                } else {
+                    incorrectGuesses++
+                }
 
-                    // If cycled through all
-                    if(selectedCountries.isEmpty()) {
-                        Intent(this, GameOverActivity::class.java).also {
-                            it.putExtra("correctGuesses", correctGuesses)
-                            it.putExtra("incorrectGuesses", incorrectGuesses)
-                            it.putExtra("region", countries[0].continent)
-                            startActivity(it)
-                            finish()
-                        }
-                    } else {
-                        // Set new flag to guess
-                        countryToGuess = pickCountry(selectedCountries)
-                        ivFlagToGuess.setImageResource(World.getFlagOf(countryToGuess.id))
-
-                        // Generate new choices
-                        setChoices(btnChoices, countries, countryToGuess)
+                // If cycled through all
+                if(selectedCountries.isEmpty()) {
+                    Intent(this, GameOverActivity::class.java).also {
+                        it.putExtra("correctGuesses", correctGuesses)
+                        it.putExtra("incorrectGuesses", incorrectGuesses)
+                        it.putExtra("region", countries[0].continent)
+                        startActivity(it)
+                        finish()
                     }
-                } catch(e: Exception) {
-                    Log.e("GameActivity", e.stackTraceToString())
+                } else {
+                    // Set new flag to guess
+                    countryToGuess = pickCountry(selectedCountries)
+                    ivFlagToGuess.setImageResource(World.getFlagOf(countryToGuess.id))
+
+                    // Generate new choices
+                    setChoices(btnChoices, countries, countryToGuess)
                 }
             }
         }
