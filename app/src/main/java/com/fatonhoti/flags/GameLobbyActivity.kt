@@ -38,8 +38,10 @@ class GameLobbyActivity : AppCompatActivity() {
         // Fetch max flags the user wants to learn
         var flagCount = 1
         val tvFlagCount = findViewById<TextView>(R.id.tvFlagCount)
-        val sbFlagCount = findViewById<SeekBar>(R.id.sbAmountFlags)
+        tvFlagCount.text = (countries.size / 2).toString()
+        val sbFlagCount = findViewById<SeekBar>(R.id.sbFlagCount)
         sbFlagCount.max = countries.size
+        sbFlagCount.progress = countries.size / 2
         sbFlagCount.setOnSeekBarChangeListener(object : OnSeekBarChangeListener {
             override fun onStopTrackingTouch(seekBar: SeekBar) { }
             override fun onStartTrackingTouch(seekBar: SeekBar) { }

@@ -1,10 +1,13 @@
 <resources>
     <string name="app_name">Flags</string>
 
+    <!-- GENERAL -->
+    <string name="btnStart">Start</string>
+    <string name="btnBack">Go Back</string>
+    <string name="btnMainMenu">Main Menu</string>
+
     <!-- ACTIVITY: MainActivity -->
-    <string name="mm_image_description">A globe of country flags</string>
-    <string name="mm_btnStart">Start</string>
-    <string name="mm_btnSettings">Settings</string>
+    <string name="MainMenuImageDescription">A globe of country flags</string>
 
     <!-- ACTIVITY: GameMenuActivity -->
     <string name="GameMenuTitle">Select a region</string>
@@ -15,21 +18,15 @@
     <string name="GameMenuChoiceNorthAmerica">North America</string>
     <string name="GameMenuChoiceSouthAmerica">South America</string>
     <string name="GameMenuChoiceOceania">Oceania</string>
-    <string name="GoBack">Go Back</string>
 
     <!-- ACTIVITY: GameLobbyActivity -->
-    <string name="defaultCount">1</string>
-    <string name="GL_START">Start</string>
+    <string name="GameLobbyTitle">How many flags do you want to learn?</string>
 
     <!-- ACTIVITY: GameActivity -->
     <string name="GameImageDescription">Flag of a country that user must guess</string>
 
     <!-- ACTIVITY: GameOverActivity -->
     <string name="GameOver">Game Over</string>
-    <string name="btnDone">Done</string>
     <string name="CorrectGuesses">Correct</string>
     <string name="IncorrectGuesses">Incorrect</string>
-    <string name="btnMainMenu">Main Menu</string>
-    <string name="GameLobbyTitle">How many flags do you want to learn?</string>
-
 </resources>
