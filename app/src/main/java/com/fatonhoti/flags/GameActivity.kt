@@ -13,18 +13,24 @@ import com.blongho.country_data.World
 import java.lang.Exception
 import java.util.*
 import java.util.concurrent.ThreadLocalRandom
+import kotlin.collections.ArrayList
 
 class GameActivity : AppCompatActivity() {
 
     private var correctGuesses = 0
     private var incorrectGuesses = 0
-    private var usedCountries = HashSet<Country>()
 
-    @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_game)
 
+        // Start the game
+        run()
+
+    }
+
+    @SuppressLint("SetTextI18n")
+    private fun run() {
         // Fetch used views
         val ivFlagToGuess = findViewById<ImageView>(R.id.ivFlagToGuess)
         val tvCountriesLeft = findViewById<TextView>(R.id.tvCountriesLeft)
@@ -39,9 +45,8 @@ class GameActivity : AppCompatActivity() {
         val max = intent.getIntExtra("MAX", 1)
 
         // ===== Fetch countries of the user selected region
-        //val countries = intent.getSerializableExtra("COUNTRIES")
-        //val countries = World.getCountriesFrom(World.Continent.ASIA)
-        val countries = World.getAllCountries()
+        @Suppress("UNCHECKED_CAST")
+        val countries = intent.getSerializableExtra("COUNTRIES") as MutableList<Country>
 
         // ===== Generate starting country
 

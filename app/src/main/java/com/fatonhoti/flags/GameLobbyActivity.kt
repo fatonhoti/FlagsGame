@@ -2,6 +2,7 @@ package com.fatonhoti.flags
 
 import android.content.Intent
 import android.os.Bundle
+import android.os.Parcelable
 import android.util.Log
 import android.widget.Button
 import android.widget.SeekBar
@@ -11,6 +12,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.blongho.country_data.Country
 import com.blongho.country_data.World
 import java.lang.Exception
+import java.util.ArrayList
 
 
 class GameLobbyActivity : AppCompatActivity() {
@@ -56,7 +58,7 @@ class GameLobbyActivity : AppCompatActivity() {
         btnStart.setOnClickListener {
             Intent(this, GameActivity::class.java).also{
                 try {
-                    //it.putExtra("COUNTRIES", countries)
+                    it.putParcelableArrayListExtra("COUNTRIES", ArrayList(countries))
                     it.putExtra("MAX", flagCount)
                     startActivity(it)
                     finish()
