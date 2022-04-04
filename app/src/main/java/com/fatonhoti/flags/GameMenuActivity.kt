@@ -16,7 +16,8 @@ class GameMenuActivity : AppCompatActivity() {
             findViewById(R.id.btnAsia),
             findViewById(R.id.btnAfrica),
             findViewById(R.id.btnNorthAmerica),
-            findViewById(R.id.btnSouthAmerica)
+            findViewById(R.id.btnSouthAmerica),
+            findViewById(R.id.btnOceania)
         )
         btnRegions.forEach { btnView ->
             btnView.setOnClickListener() {

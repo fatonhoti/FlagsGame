@@ -13,7 +13,6 @@ import com.blongho.country_data.World
 import java.lang.Exception
 import java.util.*
 import java.util.concurrent.ThreadLocalRandom
-import kotlin.collections.ArrayList
 
 class GameActivity : AppCompatActivity() {
 
@@ -44,36 +43,29 @@ class GameActivity : AppCompatActivity() {
         // ===== Fetch information from game lobby
         val max = intent.getIntExtra("MAX", 1)
 
-        // ===== Fetch countries of the user selected region
         @Suppress("UNCHECKED_CAST")
         val countries = intent.getSerializableExtra("COUNTRIES") as MutableList<Country>
 
-        // ===== Generate starting country
-
         // Select 'max' countries at random
+        tvCountriesLeft.text = "Left:$max"
         val selectedCountries = pickNRandomElements(countries, max)!!
-        tvCountriesLeft.text = "Left: " + selectedCountries.size.toString()
 
         // Take one country at random to be the country to guess
-        val startingCountry = pickCountry(selectedCountries)
-        ivFlagToGuess.setImageResource(World.getFlagOf(startingCountry.id))
+        var countryToGuess = pickCountry(selectedCountries)
+        ivFlagToGuess.setImageResource(World.getFlagOf(countryToGuess.id))
 
         // Take four countries at random to display as choices
-        setChoices(btnChoices, countries, startingCountry)
+        setChoices(btnChoices, countries, countryToGuess)
 
         // ===== Setup event listeners
         btnChoices.forEach { btn ->
             btn.setOnClickListener {
                 try {
                     val guess = btn.text.toString()
-                    if(guess == startingCountry.name) {
-                        // The user guessed the correct
+                    if(guess == countryToGuess.name) {
                         correctGuesses++
-                        // TODO: Make guess button green to indicate correct
                     } else {
-                        // The user was incorrect
                         incorrectGuesses++
-                        // TODO: Make guess button red to indicate incorrect
                     }
 
                     // If cycled through all
@@ -87,30 +79,31 @@ class GameActivity : AppCompatActivity() {
                         }
                     } else {
                         // Set new flag to guess
-                        val newCountry = pickCountry(selectedCountries)
-                        ivFlagToGuess.setImageResource(World.getFlagOf(newCountry.id))
-
-                        // Update count
-                        tvCountriesLeft.text = "Left: ${selectedCountries.size}"
+                        countryToGuess = pickCountry(selectedCountries)
+                        ivFlagToGuess.setImageResource(World.getFlagOf(countryToGuess.id))
 
                         // Generate new choices
-                        setChoices(btnChoices, countries, newCountry)
+                        setChoices(btnChoices, countries, countryToGuess)
                     }
                 } catch(e: Exception) {
-                    Log.e("GAME", e.stackTraceToString())
+                    Log.e("GameActivity", e.stackTraceToString())
                 }
             }
         }
     }
 
+    @SuppressLint("SetTextI18n")
     private fun pickCountry(selectedCountries: MutableList<Country>): Country {
         val country = selectedCountries[ThreadLocalRandom.current().nextInt(selectedCountries.size)]
+        val tvCountriesLeft = findViewById<TextView>(R.id.tvCountriesLeft)
+        tvCountriesLeft.text = "Left: " + selectedCountries.size.toString()
         selectedCountries.remove(country)
         return country
     }
 
     private fun setChoices(btnChoices: List<Button>, countries: MutableList<Country>, country: Country) {
-        val choices = pickNRandomElements(countries, 4)!!
+        val remaining = countries.filter { c -> c.name != country.name } as MutableList<Country>
+        val choices = pickNRandomElements(remaining, 4)!!
         val randIndex = ThreadLocalRandom.current().nextInt(4)
         for(i in 0 until choices.size) {
             if (i == randIndex) {
