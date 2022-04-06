@@ -5,6 +5,8 @@
     <string name="btnStart">Start</string>
     <string name="btnBack">Go Back</string>
     <string name="btnMainMenu">Main Menu</string>
+    <string name="btnSettings">Settings</string>
+    <string name="BackgroundContentDescription">World Map</string>
 
     <!-- ACTIVITY: MainActivity -->
     <string name="MainMenuImageDescription">A globe of country flags</string>
@@ -29,4 +31,11 @@
     <string name="GameOver">Game Over</string>
     <string name="CorrectGuesses">Correct</string>
     <string name="IncorrectGuesses">Incorrect</string>
+    <string name="title_activity_settings">SettingsActivity</string>
+
+    <!-- ACTIVITY: Settings -->
+    <string name="switchDarkmode">Toggle dark mode</string>
+    <string name="btnIntegrity">Integrity</string>
+    <string name="btnClearStatistics">Clear statistics</string>
+
 </resources>
