@@ -103,7 +103,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="5dp"
         android:textAlignment="viewStart"
-        android:textColor="@color/cp_8"
+        android:textColor="?attr/colorSecondaryVariant"
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/ivFlagToGuess"
