@@ -20,7 +20,7 @@ class GameMenuActivity : AppCompatActivity() {
             findViewById(R.id.btnOceania)
         )
         btnRegions.forEach { btnView ->
-            btnView.setOnClickListener() {
+            btnView.setOnClickListener {
                 Intent(this, GameLobbyActivity::class.java).also {
                     it.putExtra("REGION", btnView.text.toString())
                     startActivity(it)
@@ -30,9 +30,7 @@ class GameMenuActivity : AppCompatActivity() {
         }
 
         val btnGoBack = findViewById<Button>(R.id.btnGoBack)
-        btnGoBack.setOnClickListener {
-            finish()
-        }
+        btnGoBack.setOnClickListener { finish() }
 
     }
 

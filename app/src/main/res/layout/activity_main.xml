@@ -22,7 +22,7 @@
         app:layout_constraintGuide_percent="0.5" />
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/mm_globe"
         android:layout_width="257dp"
         android:layout_height="323dp"
         android:contentDescription="@string/MainMenuImageDescription"

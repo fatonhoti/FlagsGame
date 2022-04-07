@@ -16,10 +16,23 @@ class GameActivity : AppCompatActivity() {
 
     private var correctGuesses = 0
     private var incorrectGuesses = 0
+    private lateinit var ivFlagToGuess: ImageView
+    private lateinit var tvCountriesLeft: TextView
+    private lateinit var btnChoices: List<Button>
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_game)
+
+        // Fetch used views
+        ivFlagToGuess = findViewById(R.id.ivFlagToGuess)
+        tvCountriesLeft = findViewById(R.id.tvCountriesLeft)
+        btnChoices = listOf<Button>(
+            findViewById(R.id.btnChoiceOne),
+            findViewById(R.id.btnChoiceTwo),
+            findViewById(R.id.btnChoiceThree),
+            findViewById(R.id.btnChoiceFour)
+        )
 
         // Start the game
         run()
@@ -28,32 +41,22 @@ class GameActivity : AppCompatActivity() {
 
     @SuppressLint("SetTextI18n")
     private fun run() {
-        // Fetch used views
-        val ivFlagToGuess = findViewById<ImageView>(R.id.ivFlagToGuess)
-        val tvCountriesLeft = findViewById<TextView>(R.id.tvCountriesLeft)
-        val btnChoices = listOf<Button>(
-            findViewById(R.id.btnChoiceOne),
-            findViewById(R.id.btnChoiceTwo),
-            findViewById(R.id.btnChoiceThree),
-            findViewById(R.id.btnChoiceFour)
-        )
 
         // ===== Fetch information from game lobby
-        val max = intent.getIntExtra("MAX", 1)
-
         @Suppress("UNCHECKED_CAST")
         val countries = intent.getSerializableExtra("COUNTRIES") as MutableList<Country>
-
-        // Select 'max' countries at random
+        val max = intent.getIntExtra("MAX", 1)
         tvCountriesLeft.text = "Left:$max"
+
+        // Select 'max' countries at random that the user will try to guess
         val selectedCountries = pickNRandomElements(countries, max)!!
 
-        // Take one country at random to be the country to guess
+        // Take one starting country at random to be the country to guess
         var countryToGuess = pickCountry(selectedCountries)
         ivFlagToGuess.setImageResource(World.getFlagOf(countryToGuess.id))
 
         // Take four countries at random to display as choices
-        setChoices(btnChoices, countries, countryToGuess)
+        setChoices(countries, countryToGuess)
 
         // ===== Setup event listeners
         btnChoices.forEach { btn ->
@@ -65,8 +68,8 @@ class GameActivity : AppCompatActivity() {
                     incorrectGuesses++
                 }
 
-                // If cycled through all
                 if(selectedCountries.isEmpty()) {
+                    // All countries have been guessed
                     Intent(this, GameOverActivity::class.java).also {
                         it.putExtra("correctGuesses", correctGuesses)
                         it.putExtra("incorrectGuesses", incorrectGuesses)
@@ -75,12 +78,14 @@ class GameActivity : AppCompatActivity() {
                         finish()
                     }
                 } else {
+                    tvCountriesLeft.text = "Left: " + selectedCountries.size.toString()
+
                     // Set new flag to guess
                     countryToGuess = pickCountry(selectedCountries)
-                    ivFlagToGuess.setImageResource(World.getFlagOf(countryToGuess.id))
+                    ivFlagToGuess.setImageResource(World.getFlagOf(countryToGuess.alpha2))
 
                     // Generate new choices
-                    setChoices(btnChoices, countries, countryToGuess)
+                    setChoices(countries, countryToGuess)
                 }
             }
         }
@@ -89,13 +94,11 @@ class GameActivity : AppCompatActivity() {
     @SuppressLint("SetTextI18n")
     private fun pickCountry(selectedCountries: MutableList<Country>): Country {
         val country = selectedCountries[ThreadLocalRandom.current().nextInt(selectedCountries.size)]
-        val tvCountriesLeft = findViewById<TextView>(R.id.tvCountriesLeft)
-        tvCountriesLeft.text = "Left: " + selectedCountries.size.toString()
         selectedCountries.remove(country)
         return country
     }
 
-    private fun setChoices(btnChoices: List<Button>, countries: MutableList<Country>, country: Country) {
+    private fun setChoices(countries: MutableList<Country>, country: Country) {
         val remaining = countries.filter { c -> c.name != country.name } as MutableList<Country>
         val choices = pickNRandomElements(remaining, 4)!!
         val randIndex = ThreadLocalRandom.current().nextInt(4)
@@ -124,6 +127,7 @@ class GameActivity : AppCompatActivity() {
         sublist.forEach {
             copy.add(it)
         }
+        copy.shuffle()
         return copy
 
     }

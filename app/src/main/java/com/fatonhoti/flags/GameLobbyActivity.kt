@@ -19,26 +19,18 @@ class GameLobbyActivity : AppCompatActivity() {
         setContentView(R.layout.activity_game_lobby)
 
         // Fetch all the countries of the region
-        var region = intent.getStringExtra("REGION")!!.uppercase()
-        val countries: MutableList<Country>
-        if(region == "WORLD") {
-            countries = World.getAllCountries()
-        } else {
-            val fst = region.substring(0,1)
-            if (fst == "N" || fst == "S") {
-                // Need to add "_" between "North/South America" so API understands string
-                region = region.substring(0,5) + "_AMERICA"
-            }
-            countries = World.getCountriesFrom(World.Continent.valueOf(region))
-        }
+        val region = intent.getStringExtra("REGION")!!.uppercase()
+        val countries = getCountries(region)
 
         // Fetch max flags the user wants to learn
-        var flagCount = 1
         val tvFlagCount = findViewById<TextView>(R.id.tvFlagCount)
         tvFlagCount.text = (countries.size / 2).toString()
+
         val sbFlagCount = findViewById<SeekBar>(R.id.sbFlagCount)
         sbFlagCount.max = countries.size
         sbFlagCount.progress = countries.size / 2
+
+        var flagCount = countries.size / 2
         sbFlagCount.setOnSeekBarChangeListener(object : OnSeekBarChangeListener {
             override fun onStopTrackingTouch(seekBar: SeekBar) { }
             override fun onStartTrackingTouch(seekBar: SeekBar) { }
@@ -63,6 +55,21 @@ class GameLobbyActivity : AppCompatActivity() {
             }
         }
 
+    }
+
+    private fun getCountries(region: String) : MutableList<Country> {
+        return if(region == "WORLD") {
+            World.getAllCountries()
+        } else {
+            val fst = region.substring(0,1)
+            if (fst == "N" || fst == "S") {
+                // Need to add "_" between "North/South America" so API understands string
+                val regionModified = region.substring(0,5) + "_AMERICA"
+                World.getCountriesFrom(World.Continent.valueOf(regionModified))
+            } else {
+                World.getCountriesFrom(World.Continent.valueOf(region))
+            }
+        }
     }
 
 }

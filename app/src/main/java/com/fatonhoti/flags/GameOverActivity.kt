@@ -13,7 +13,6 @@ class GameOverActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_game_over)
 
-        // Display fun information
         val region = intent.getStringExtra("region")
         val tvRegion = findViewById<TextView>(R.id.tvRegion)
         tvRegion.text = "Region: $region"
@@ -28,13 +27,10 @@ class GameOverActivity : AppCompatActivity() {
 
         val btnMainMenu = findViewById<Button>(R.id.btnMainMenu)
         btnMainMenu.setOnClickListener {
-            // Return back to GameMenuActivity
             Intent(this, GameMenuActivity::class.java).also {
-                //it.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_CLEAR_TASK)
                 startActivity(it)
                 finish()
             }
         }
-
     }
 }

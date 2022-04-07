@@ -14,10 +14,10 @@ class IntegrityDialog : AppCompatDialogFragment() {
 
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
         val builder = AlertDialog.Builder(activity)
-        builder.setTitle("Data Integrity Policy")
+        return builder.setTitle("Data Integrity Policy")
             .setMessage(dialogMessage)
             .setPositiveButton(android.R.string.ok) { _, _ -> }
-        return builder.create()
+            .create()
     }
 
 }
