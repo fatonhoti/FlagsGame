@@ -2,9 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.fatonhoti.flags">
 
-    <!-- normal => phones -->
-    <!-- large  => 7"     -->
-    <!-- xLarge => 10"    -->
+    <!-- normal => phones      -->
+    <!-- large  => 7" tablets  -->
+    <!-- xLarge => 10" tablets -->
     <supports-screens
         android:normalScreens="true"
         android:largeScreens="true"
