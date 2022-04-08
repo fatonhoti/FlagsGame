@@ -10,19 +10,20 @@
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:src="@drawable/world_map"
+        android:contentDescription="@string/BackgroundContentDescription"
         android:scaleType="centerCrop"
-        android:contentDescription="@string/BackgroundContentDescription"/>
+        android:src="@drawable/world_map" />
 
     <ImageView
         android:id="@+id/ivFlagToGuess"
-        android:layout_width="match_parent"
-        android:layout_height="260dp"
-        android:layout_marginTop="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:contentDescription="@string/GameImageDescription"
         android:scaleType="fitXY"
+        android:scaleX="1.5"
+        android:scaleY="1.5"
+        app:layout_constraintBottom_toTopOf="@+id/guideline2"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvCountriesLeft"
         app:srcCompat="@drawable/xk" />
