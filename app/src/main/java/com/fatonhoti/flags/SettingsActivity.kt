@@ -32,13 +32,16 @@ class SettingsActivity : AppCompatActivity() {
             Toast.makeText(this, "This function has not been implemented yet.", Toast.LENGTH_SHORT).show()
         }
 
+        val btnAck = findViewById<Button>(R.id.btnAck)
+        btnAck.setOnClickListener { openDialog("ACK") }
+
         val btnIntegrity = findViewById<Button>(R.id.btnIntegrity)
-        btnIntegrity.setOnClickListener { openDialog() }
+        btnIntegrity.setOnClickListener { openDialog("INTEGRITY") }
 
     }
 
-    private fun openDialog() {
-        IntegrityDialog().show(supportFragmentManager, "Integrity Dialog")
+    private fun openDialog(messageType: String) {
+        IntegrityDialog(messageType).show(supportFragmentManager, "Integrity Dialog")
     }
 
 }

@@ -36,6 +36,8 @@
     <!-- ACTIVITY: Settings -->
     <string name="switchDarkmode">Toggle dark mode</string>
     <string name="btnIntegrity">Integrity</string>
+    <string name="btnAck">Acknowledgements</string>
+    <string name="btnLicense">License</string>
     <string name="btnClearStatistics">Clear statistics</string>
 
 </resources>
