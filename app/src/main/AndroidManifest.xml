@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.fatonhoti.flags">
-
-    <!-- normal => phones      -->
-    <!-- large  => 7" tablets  -->
+    <!-- normal => phones -->
+    <!-- large  => 7" tablets -->
     <!-- xLarge => 10" tablets -->
     <supports-screens
-        android:normalScreens="true"
         android:largeScreens="true"
+        android:normalScreens="true"
         android:xlargeScreens="true" />
 
     <application
@@ -17,6 +16,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Flags">
+        <activity
+            android:name=".GameModesMenuActivity"
+            android:exported="false" />
         <activity
             android:name=".SettingsActivity"
             android:exported="false"
@@ -31,7 +33,7 @@
             android:name=".GameLobbyActivity"
             android:exported="false" />
         <activity
-            android:name=".GameMenuActivity"
+            android:name=".GameFlagsMenuActivity"
             android:exported="false" />
         <activity
             android:name=".MainActivity"

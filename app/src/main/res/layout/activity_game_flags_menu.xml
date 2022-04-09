@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/cp_2"
-    tools:context=".GameMenuActivity">
+    tools:context=".GameFlagsMenuActivity">
 
     <ImageView
         android:layout_width="match_parent"
@@ -15,7 +15,7 @@
         android:contentDescription="@string/BackgroundContentDescription"/>
 
     <Button
-        android:id="@+id/btnWorld"
+        android:id="@+id/btnFlags"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
@@ -31,7 +31,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
     <Button
-        android:id="@+id/btnEurope"
+        android:id="@+id/btnCapitals"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
@@ -44,10 +44,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnWorld" />
+        app:layout_constraintTop_toBottomOf="@+id/btnFlags" />
 
     <Button
-        android:id="@+id/btnAsia"
+        android:id="@+id/btnCurrencies"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
@@ -60,7 +60,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnEurope" />
+        app:layout_constraintTop_toBottomOf="@+id/btnCapitals" />
 
     <Button
         android:id="@+id/btnAfrica"
@@ -76,7 +76,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnAsia" />
+        app:layout_constraintTop_toBottomOf="@+id/btnCurrencies" />
 
     <Button
         android:id="@+id/btnNorthAmerica"

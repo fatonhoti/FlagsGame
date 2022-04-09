@@ -59,7 +59,7 @@ class MainActivity : AppCompatActivity() {
 
         val btnStart = findViewById<Button>(R.id.mm_btnStart)
         btnStart.setOnClickListener {
-            Intent(this, GameMenuActivity::class.java).also { startActivity(it) }
+            Intent(this, GameModesMenuActivity::class.java).also { startActivity(it) }
         }
 
         val btnSettings = findViewById<Button>(R.id.btnSettings)

@@ -29,15 +29,15 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 
-class GameMenuActivity : AppCompatActivity() {
+class GameFlagsMenuActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_game_menu)
+        setContentView(R.layout.activity_game_flags_menu)
 
         val btnRegions = listOf<Button>(
-            findViewById(R.id.btnWorld),
-            findViewById(R.id.btnEurope),
-            findViewById(R.id.btnAsia),
+            findViewById(R.id.btnFlags),
+            findViewById(R.id.btnCapitals),
+            findViewById(R.id.btnCurrencies),
             findViewById(R.id.btnAfrica),
             findViewById(R.id.btnNorthAmerica),
             findViewById(R.id.btnSouthAmerica),

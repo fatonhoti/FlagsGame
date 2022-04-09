@@ -54,6 +54,7 @@ class GameLobbyActivity : AppCompatActivity() {
         sbFlagCount.max = countries.size
         sbFlagCount.progress = countries.size / 2
 
+        // TODO: Make seekbar bigger
         var flagCount = countries.size / 2
         sbFlagCount.setOnSeekBarChangeListener(object : OnSeekBarChangeListener {
             override fun onStopTrackingTouch(seekBar: SeekBar) { }

@@ -27,7 +27,6 @@ package com.fatonhoti.flags
 import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.widget.Button
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
@@ -66,7 +65,7 @@ class GameOverActivity : AppCompatActivity() {
 
         val btnMainMenu = findViewById<Button>(R.id.btnMainMenu)
         btnMainMenu.setOnClickListener {
-            Intent(this, GameMenuActivity::class.java).also {
+            Intent(this, GameModesMenuActivity::class.java).also {
                 startActivity(it)
                 finish()
             }

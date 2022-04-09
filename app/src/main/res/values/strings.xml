@@ -11,7 +11,13 @@
     <!-- ACTIVITY: MainActivity -->
     <string name="MainMenuImageDescription">A globe of country flags</string>
 
-    <!-- ACTIVITY: GameMenuActivity -->
+    <!-- ACTIVITY: GameModesMenuActivity -->
+    <string name="GameModeMenuTitle">Select a game mode</string>
+    <string name="GameModeMenuChoiceFlags">Flags</string>
+    <string name="GameModeMenuChoiceCapitals">Capitals</string>
+    <string name="GameModeMenuChoiceCurrencies">Currencies</string>
+
+    <!-- ACTIVITY: GameFlagsMenuActivity -->
     <string name="GameMenuTitle">Select a region</string>
     <string name="GameMenuChoiceWorld">World</string>
     <string name="GameMenuChoiceEuropean">Europe</string>
