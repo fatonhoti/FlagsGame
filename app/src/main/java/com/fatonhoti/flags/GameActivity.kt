@@ -35,6 +35,7 @@ import com.blongho.country_data.Country
 import com.blongho.country_data.World
 import java.util.*
 import java.util.concurrent.ThreadLocalRandom
+import kotlin.collections.HashMap
 
 class GameActivity : AppCompatActivity() {
 
@@ -43,6 +44,7 @@ class GameActivity : AppCompatActivity() {
     private lateinit var ivFlagToGuess: ImageView
     private lateinit var tvCountriesLeft: TextView
     private lateinit var btnChoices: List<Button>
+    private val gameResults = HashMap<Country, String>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -88,8 +90,10 @@ class GameActivity : AppCompatActivity() {
                 val guess = btn.text.toString()
                 if(guess == countryToGuess.name) {
                     correctGuesses++
+                    gameResults[countryToGuess] = "Correct"
                 } else {
                     incorrectGuesses++
+                    gameResults[countryToGuess] = "Incorrect"
                 }
 
                 if(selectedCountries.isEmpty()) {
@@ -98,6 +102,7 @@ class GameActivity : AppCompatActivity() {
                         it.putExtra("correctGuesses", correctGuesses)
                         it.putExtra("incorrectGuesses", incorrectGuesses)
                         it.putExtra("region", countries[0].continent)
+                        it.putExtra("gameResults", gameResults)
                         startActivity(it)
                         finish()
                     }

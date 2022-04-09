@@ -27,15 +27,30 @@ package com.fatonhoti.flags
 import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.widget.Button
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import com.blongho.country_data.Country
 
 class GameOverActivity : AppCompatActivity() {
     @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_game_over)
+
+        val gameResults = intent.getSerializableExtra("gameResults") as HashMap<Country, String>
+        val res = ArrayList<GameOverRecyclerViewListItem>()
+        gameResults.forEach {
+            val item = GameOverRecyclerViewListItem(it.key.flagResource, it.value)
+            res.add(item)
+        }
+        val recyclerView = findViewById<RecyclerView>(R.id.rvGameResults)
+        val adapter = GameOverRecyclerViewAdapter(res)
+        recyclerView.layoutManager = LinearLayoutManager(this)
+        recyclerView.adapter = adapter
 
         val region = intent.getStringExtra("region")
         val tvRegion = findViewById<TextView>(R.id.tvRegion)
