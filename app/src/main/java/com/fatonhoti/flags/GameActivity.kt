@@ -25,6 +25,7 @@ SOFTWARE.
 package com.fatonhoti.flags
 
 import android.annotation.SuppressLint
+import android.app.AlertDialog
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
@@ -63,6 +64,15 @@ class GameActivity : AppCompatActivity() {
         // Start the game
         run()
 
+    }
+
+    override fun onBackPressed() {
+        val builder = AlertDialog.Builder(this)
+        builder.setTitle("Do you want to go back?")
+            .setMessage("Going back will lose you the progress!")
+            .setPositiveButton(android.R.string.ok) { _, _ -> finish()}
+            .setNegativeButton(android.R.string.cancel) { _, _ -> }
+            .create().show()
     }
 
     @SuppressLint("SetTextI18n")
