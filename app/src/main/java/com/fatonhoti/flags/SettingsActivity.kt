@@ -25,6 +25,7 @@ SOFTWARE.
 package com.fatonhoti.flags
 
 import android.annotation.SuppressLint
+import android.app.AlertDialog
 import android.os.Bundle
 import android.widget.Button
 import android.widget.Switch
@@ -57,15 +58,33 @@ class SettingsActivity : AppCompatActivity() {
         }
 
         val btnAck = findViewById<Button>(R.id.btnAck)
-        btnAck.setOnClickListener { openDialog("ACK") }
+        btnAck.setOnClickListener {
+            val ackMessage = """
+                The API used to fetch all the information of the different continents and countries is "worldCountryData".
+                
+                Check it out at "https://github.com/blongho/worldCountryData".
+            """.trimIndent()
+            openDialog("Acknowledgements", ackMessage)
+        }
 
         val btnIntegrity = findViewById<Button>(R.id.btnIntegrity)
-        btnIntegrity.setOnClickListener { openDialog("INTEGRITY") }
+        btnIntegrity.setOnClickListener {
+            val integrityMessage = """
+                The application "Flags" and its creator does not store nor send any data to the creator or associated third parties in any shape or form.
+                
+                If you have any questions you can contact the creator/developer at hotifaton@outlook.com, specify 'Flags' in the title.
+            """.trimIndent()
+            openDialog("Data Integrity Policy", integrityMessage)
+        }
 
     }
 
-    private fun openDialog(messageType: String) {
-        IntegrityDialog(messageType).show(supportFragmentManager, "Integrity Dialog")
+    private fun openDialog(title: String, message: String) {
+        val builder = AlertDialog.Builder(this)
+        builder.setTitle(title)
+            .setMessage(message)
+            .setPositiveButton(android.R.string.ok) { _, _ -> }
+            .create().show()
     }
 
 }
