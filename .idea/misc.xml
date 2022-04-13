@@ -19,6 +19,7 @@
         <entry key="..\:/Users/fotan/AndroidStudioProjects/FlagsGame/app/src/main/res/layout-large/activity_game.xml" value="0.33" />
         <entry key="..\:/Users/fotan/AndroidStudioProjects/FlagsGame/app/src/main/res/layout-large/activity_game_capitals.xml" value="0.275" />
         <entry key="..\:/Users/fotan/AndroidStudioProjects/FlagsGame/app/src/main/res/layout-large/activity_game_currencies.xml" value="0.275" />
+        <entry key="..\:/Users/fotan/AndroidStudioProjects/FlagsGame/app/src/main/res/layout-large/activity_game_flags.xml" value="0.41217798594847777" />
         <entry key="..\:/Users/fotan/AndroidStudioProjects/FlagsGame/app/src/main/res/layout-large/activity_game_lobby.xml" value="0.33" />
         <entry key="..\:/Users/fotan/AndroidStudioProjects/FlagsGame/app/src/main/res/layout-large/activity_game_menu.xml" value="0.33" />
         <entry key="..\:/Users/fotan/AndroidStudioProjects/FlagsGame/app/src/main/res/layout-large/activity_game_modes_menu.xml" value="0.25" />
@@ -32,8 +33,9 @@
         <entry key="..\:/Users/fotan/AndroidStudioProjects/FlagsGame/app/src/main/res/layout-small/activity_main.xml" value="1.1" />
         <entry key="..\:/Users/fotan/AndroidStudioProjects/FlagsGame/app/src/main/res/layout-small/activity_settings.xml" value="0.9177631578947368" />
         <entry key="..\:/Users/fotan/AndroidStudioProjects/FlagsGame/app/src/main/res/layout-xlarge/activity_game.xml" value="0.25" />
-        <entry key="..\:/Users/fotan/AndroidStudioProjects/FlagsGame/app/src/main/res/layout-xlarge/activity_game_capitals.xml" value="0.275" />
+        <entry key="..\:/Users/fotan/AndroidStudioProjects/FlagsGame/app/src/main/res/layout-xlarge/activity_game_capitals.xml" value="0.25" />
         <entry key="..\:/Users/fotan/AndroidStudioProjects/FlagsGame/app/src/main/res/layout-xlarge/activity_game_currencies.xml" value="0.275" />
+        <entry key="..\:/Users/fotan/AndroidStudioProjects/FlagsGame/app/src/main/res/layout-xlarge/activity_game_flags.xml" value="0.16" />
         <entry key="..\:/Users/fotan/AndroidStudioProjects/FlagsGame/app/src/main/res/layout-xlarge/activity_game_lobby.xml" value="0.25" />
         <entry key="..\:/Users/fotan/AndroidStudioProjects/FlagsGame/app/src/main/res/layout-xlarge/activity_game_menu.xml" value="0.275" />
         <entry key="..\:/Users/fotan/AndroidStudioProjects/FlagsGame/app/src/main/res/layout-xlarge/activity_game_modes_menu.xml" value="0.2" />

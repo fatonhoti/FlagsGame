@@ -40,17 +40,6 @@ class GameOverActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_game_over)
 
-        val gameResults = intent.getSerializableExtra("gameResults") as HashMap<Country, String>
-        val res = ArrayList<GameOverRecyclerViewListItem>()
-        gameResults.forEach {
-            val item = GameOverRecyclerViewListItem(it.key.flagResource, it.value)
-            res.add(item)
-        }
-        val recyclerView = findViewById<RecyclerView>(R.id.rvGameResults)
-        val adapter = GameOverRecyclerViewAdapter(res)
-        recyclerView.layoutManager = LinearLayoutManager(this)
-        recyclerView.adapter = adapter
-
         val region = intent.getStringExtra("region")
         val tvRegion = findViewById<TextView>(R.id.tvRegion)
         tvRegion.text = "Region: $region"
