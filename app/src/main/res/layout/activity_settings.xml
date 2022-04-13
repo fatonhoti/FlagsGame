@@ -45,46 +45,10 @@
         app:layout_constraintTop_toTopOf="@+id/imageView2" />
 
     <Button
-        android:id="@+id/btnIntegrity"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:backgroundTint="@color/cp_8"
-        android:minWidth="350dp"
-        android:padding="10dp"
-        android:text="@string/btnIntegrity"
-        android:textAlignment="center"
-        android:textColor="@color/cp_2"
-        android:textSize="25sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnAck" />
-
-    <Button
-        android:id="@+id/btnAck"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:backgroundTint="@color/cp_8"
-        android:minWidth="350dp"
-        android:padding="10dp"
-        android:text="@string/btnAck"
-        android:textAlignment="center"
-        android:textColor="@color/cp_2"
-        android:textSize="25sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnClearStatistics" />
-
-    <Button
         android:id="@+id/btnClearStatistics"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="50dp"
         android:backgroundTint="@color/cp_8"
         android:minWidth="350dp"
         android:padding="10dp"
@@ -94,6 +58,7 @@
         android:textSize="25sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.491"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/switchDarkmode" />
 

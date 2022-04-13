@@ -38,7 +38,7 @@ import java.util.*
 import java.util.concurrent.ThreadLocalRandom
 import kotlin.collections.HashMap
 
-class GameActivity : AppCompatActivity() {
+class GameFlagsActivity : AppCompatActivity() {
 
     private var correctGuesses = 0
     private var incorrectGuesses = 0

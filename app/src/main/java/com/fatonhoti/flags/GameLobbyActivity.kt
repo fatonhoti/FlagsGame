@@ -72,7 +72,7 @@ class GameLobbyActivity : AppCompatActivity() {
         // Start game
         val btnStart = findViewById<Button>(R.id.btnGameLobbyStart)
         btnStart.setOnClickListener {
-            Intent(this, GameActivity::class.java).also{
+            Intent(this, GameFlagsActivity::class.java).also{
                 it.putParcelableArrayListExtra("COUNTRIES", ArrayList(countries))
                 it.putExtra("MAX", flagCount)
                 startActivity(it)

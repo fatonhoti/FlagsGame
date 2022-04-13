@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#EEF4FF"
-    tools:context=".GameActivity">
+    tools:context=".GameFlagsActivity">
 
     <ImageView
         android:layout_width="match_parent"
