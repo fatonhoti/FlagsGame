@@ -57,8 +57,8 @@ dependencies {
     implementation 'androidx.recyclerview:recyclerview:1.2.1'
 
     //implementation 'com.github.blongho:worldCountryData:1.5.3'
-
-    //implementation file("../libs/country_data-release.aar")
+    // TODO: Remove and use live version above
+    // This is just temporary
     implementation 'com.google.code.gson:gson:2.9.0'
     implementation files('libs/country_data-release.aar')
 
