@@ -26,6 +26,7 @@ package com.fatonhoti.flags
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.widget.Button
 import android.widget.SeekBar
 import android.widget.SeekBar.OnSeekBarChangeListener
@@ -33,6 +34,7 @@ import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.blongho.country_data.Country
 import com.blongho.country_data.World
+import java.lang.Exception
 import java.util.ArrayList
 
 
@@ -72,14 +74,29 @@ class GameLobbyActivity : AppCompatActivity() {
         // Start game
         val btnStart = findViewById<Button>(R.id.btnGameLobbyStart)
         btnStart.setOnClickListener {
-            Intent(this, GameFlagsActivity::class.java).also{
-                it.putParcelableArrayListExtra("COUNTRIES", ArrayList(countries))
-                it.putExtra("MAX", flagCount)
-                startActivity(it)
+            val i: Intent? = when (intent.getStringExtra("MODE")) {
+                "FLAG" -> createIntent(GameFlagsActivity::class.java, countries, flagCount)
+                "CAPITAL" -> createIntent(GameCapitalsActivity::class.java, countries, flagCount)
+                "CURRENCY" -> createIntent(GameCurrenciesActivity::class.java, countries, flagCount)
+                else -> null
+            }
+
+            if(i == null) {
+                // Should never occur
                 finish()
             }
+
+            startActivity(i)
+            finish()
         }
 
+    }
+
+    private fun createIntent(ActivityClass: Class<*>?, countries: MutableList<Country>, flagCount: Int) : Intent {
+        return Intent(this, ActivityClass).also{
+            it.putParcelableArrayListExtra("COUNTRIES", ArrayList(countries))
+            it.putExtra("MAX", flagCount)
+        }
     }
 
     private fun getCountries(region: String) : MutableList<Country> {
@@ -95,6 +112,18 @@ class GameLobbyActivity : AppCompatActivity() {
                 World.getCountriesFrom(World.Continent.valueOf(region))
             }
         }
+    }
+
+    private fun runFlagGame() {
+
+    }
+
+    private fun runCapitalGame() {
+
+    }
+
+    private fun runCurrencyGame() {
+
     }
 
 }

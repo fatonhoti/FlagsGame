@@ -27,12 +27,15 @@ package com.fatonhoti.flags
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.Button
 
-class GameFlagsMenuActivity : AppCompatActivity() {
+class GameRegionMenuActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_game_flags_menu)
+
+        val gameMode = intent.getStringExtra("MODE")!!
 
         val btnRegions = listOf<Button>(
             findViewById(R.id.btnFlags),
@@ -46,6 +49,7 @@ class GameFlagsMenuActivity : AppCompatActivity() {
         btnRegions.forEach { btnView ->
             btnView.setOnClickListener {
                 Intent(this, GameLobbyActivity::class.java).also {
+                    it.putExtra("MODE", gameMode)
                     it.putExtra("REGION", btnView.text.toString())
                     startActivity(it)
                     finish()

@@ -13,7 +13,8 @@ class GameModesMenuActivity : AppCompatActivity() {
 
         val btnFlags = findViewById<Button>(R.id.btnFlags)
         btnFlags.setOnClickListener {
-            Intent(this, GameFlagsMenuActivity::class.java).also {
+            Intent(this, GameRegionMenuActivity::class.java).also {
+                it.putExtra("MODE", "FLAG")
                 startActivity(it)
                 finish()
             }
@@ -21,14 +22,20 @@ class GameModesMenuActivity : AppCompatActivity() {
 
         val btnCapitals = findViewById<Button>(R.id.btnCapitals)
         btnCapitals.setOnClickListener {
-            // TODO: Start "Capitals" game mode activity
-            Toast.makeText(this, "This game mode has not been implemented yet!", Toast.LENGTH_SHORT).show()
+            Intent(this, GameRegionMenuActivity::class.java).also {
+                it.putExtra("MODE", "CAPITAL")
+                startActivity(it)
+                finish()
+            }
         }
 
         val btnCurrencies = findViewById<Button>(R.id.btnCurrencies)
         btnCurrencies.setOnClickListener {
-            // TODO: Start "Capitals" game mode activity
-            Toast.makeText(this, "This game mode has not been implemented yet!", Toast.LENGTH_SHORT).show()
+            Intent(this, GameRegionMenuActivity::class.java).also {
+                it.putExtra("MODE", "CURRENCY")
+                startActivity(it)
+                finish()
+            }
         }
 
         val btnGoBack = findViewById<Button>(R.id.btnGoBack)
