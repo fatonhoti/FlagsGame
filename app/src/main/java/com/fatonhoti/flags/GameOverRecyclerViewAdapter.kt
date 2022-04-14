@@ -1,17 +1,15 @@
 package com.fatonhoti.flags
 
-import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
-class GameOverRecyclerViewAdapter(items: MutableList<GameOverRecyclerViewListItem>) :
-    RecyclerView.Adapter<GameOverRecyclerViewAdapter.ViewHolder>() {
+class RecyclerViewAdapter(items: MutableList<ListItem>) :
+    RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder>() {
 
-    private val listItems: MutableList<GameOverRecyclerViewListItem> = items
+    private val listItems: MutableList<ListItem> = items
 
     override fun onCreateViewHolder(
         parent: ViewGroup,
@@ -22,13 +20,8 @@ class GameOverRecyclerViewAdapter(items: MutableList<GameOverRecyclerViewListIte
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.ivFlag.setImageResource(listItems[position].flag)
-        holder.tvAnswer.text = listItems[position].answer
-        if(holder.tvAnswer.text == "Correct") {
-            holder.tvAnswer.setTextColor(Color.parseColor("#43A047"))
-        } else {
-            holder.tvAnswer.setTextColor(Color.parseColor("#F44336"))
-        }
+        holder.tvGame.text = listItems[position].game
+        holder.tvDescription.text = listItems[position].description
     }
 
     override fun getItemCount(): Int {
@@ -36,8 +29,8 @@ class GameOverRecyclerViewAdapter(items: MutableList<GameOverRecyclerViewListIte
     }
 
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
-        val ivFlag: ImageView = view.findViewById(R.id.ivFlag)
-        val tvAnswer: TextView = view.findViewById(R.id.tvAnswer)
+        val tvGame: TextView = view.findViewById(R.id.tvGame)
+        val tvDescription: TextView = view.findViewById(R.id.tvDescription)
     }
 
 

@@ -7,6 +7,7 @@
     <string name="btnMainMenu">Main Menu</string>
     <string name="btnSettings">Settings</string>
     <string name="BackgroundContentDescription">World Map</string>
+    <string name="tvLetsPlay">Let\'s play!</string>
 
     <!-- ACTIVITY: MainActivity -->
     <string name="MainMenuImageDescription">A globe of country flags</string>

@@ -10,9 +10,15 @@
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:src="@drawable/world_map"
+        android:contentDescription="@string/BackgroundContentDescription"
         android:scaleType="centerCrop"
-        android:contentDescription="@string/BackgroundContentDescription"/>
+        android:src="@drawable/world_map"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline2"
@@ -37,42 +43,28 @@
         android:textColor="?attr/colorSecondaryVariant"
         android:textSize="30sp"
         android:textStyle="bold"
+        android:fontFamily="@font/raleway_bold"
         app:layout_constraintBottom_toTopOf="@+id/guideline2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <SeekBar
-        android:id="@+id/sbFlagCount"
-        style="@style/Widget.AppCompat.SeekBar.Discrete"
-        android:layout_width="300dp"
-        android:layout_height="50dp"
-        android:max="10"
-        android:progress="5"
-        android:progressBackgroundTint="@color/btnColor"
-        android:progressTint="@color/btnColor"
-        android:scrollbarSize="6dp"
-        android:thumbTint="@color/btnColor"
+    <com.google.android.material.slider.Slider
+        android:id="@+id/sbMaterial"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:stepSize="1.0"
         app:layout_constraintBottom_toTopOf="@+id/guideline2"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.504"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvGameLobbyTitle"
-        app:layout_constraintVertical_bias="0.752"
-        app:tickMarkTint="@color/cp_8" />
-
-    <TextView
-        android:id="@+id/tvFlagCount"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAlignment="center"
-        android:textColor="?attr/colorSecondaryVariant"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/sbFlagCount"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvGameLobbyTitle" />
+        app:thumbColor="@color/cp_8"
+        app:thumbRadius="22.0dp"
+        app:tickVisible="false"
+        app:trackColorActive="@color/btnColor"
+        app:trackColorInactive="@color/cp_3"
+        app:trackHeight="40.0dp" />
 
     <Button
         android:id="@+id/btnGameLobbyStart"
@@ -84,6 +76,7 @@
         android:textColor="@color/btnTextColor"
         android:textSize="30sp"
         android:textStyle="bold"
+        android:fontFamily="@font/raleway_bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

@@ -34,6 +34,7 @@ import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.blongho.country_data.Country
 import com.blongho.country_data.World
+import com.google.android.material.slider.Slider
 import java.lang.Exception
 import java.util.ArrayList
 
@@ -44,50 +45,40 @@ class GameLobbyActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_game_lobby)
 
-        // Fetch all the countries of the region
-        val region = intent.getStringExtra("REGION")!!.uppercase()
-        val countries = getCountries(region)
+        try {
+            // Fetch all the countries of the region
+            val region = intent.getStringExtra("REGION")!!.uppercase()
+            val countries = getCountries(region)
 
-        // Fetch max flags the user wants to learn
-        val tvFlagCount = findViewById<TextView>(R.id.tvFlagCount)
-        tvFlagCount.text = (countries.size / 2).toString()
+            var flagCount = countries.size / 2
+            val sbCounter = findViewById<Slider>(R.id.sbMaterial)
+            sbCounter.valueFrom = 1F
+            sbCounter.valueTo = countries.size.toFloat()
+            sbCounter.value = (countries.size / 2).toFloat()
+            sbCounter.addOnChangeListener { _, value, _ ->
+                flagCount = value.toInt()
+            }
 
-        val sbFlagCount = findViewById<SeekBar>(R.id.sbFlagCount)
-        sbFlagCount.max = countries.size
-        sbFlagCount.progress = countries.size / 2
-
-        // TODO: Make seekbar bigger
-        var flagCount = countries.size / 2
-        sbFlagCount.setOnSeekBarChangeListener(object : OnSeekBarChangeListener {
-            override fun onStopTrackingTouch(seekBar: SeekBar) { }
-            override fun onStartTrackingTouch(seekBar: SeekBar) { }
-            override fun onProgressChanged(seekBar: SeekBar, progress: Int, fromUser: Boolean) {
-                flagCount = if(progress == 0) {
-                    progress + 1
-                } else {
-                    progress
+            // Start game
+            val btnStart = findViewById<Button>(R.id.btnGameLobbyStart)
+            btnStart.setOnClickListener {
+                val i: Intent? = when (intent.getStringExtra("MODE")) {
+                    "FLAG" -> createIntent(GameFlagsActivity::class.java, countries, flagCount)
+                    "CAPITAL" -> createIntent(GameCapitalsActivity::class.java, countries, flagCount)
+                    "CURRENCY" -> createIntent(GameCurrenciesActivity::class.java, countries, flagCount)
+                    else -> null
                 }
-                tvFlagCount.text = flagCount.toString()
-            }
-        })
 
-        // Start game
-        val btnStart = findViewById<Button>(R.id.btnGameLobbyStart)
-        btnStart.setOnClickListener {
-            val i: Intent? = when (intent.getStringExtra("MODE")) {
-                "FLAG" -> createIntent(GameFlagsActivity::class.java, countries, flagCount)
-                "CAPITAL" -> createIntent(GameCapitalsActivity::class.java, countries, flagCount)
-                "CURRENCY" -> createIntent(GameCurrenciesActivity::class.java, countries, flagCount)
-                else -> null
-            }
+                if(i == null) {
+                    // Should never occur
+                    finish()
+                }
 
-            if(i == null) {
-                // Should never occur
+                startActivity(i)
                 finish()
             }
-
-            startActivity(i)
-            finish()
+        } catch(e: Exception) {
+            Log.e("MAT", e.toString())
         }
 
     }
