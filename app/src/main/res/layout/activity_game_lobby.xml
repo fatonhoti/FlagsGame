@@ -28,7 +28,7 @@
         android:fontFamily="@font/raleway_bold"
         android:text="@string/GameLobbyTitle"
         android:textAlignment="center"
-        android:textColor="?attr/colorOnSecondary"
+        android:textColor="?attr/colorOnSurface"
         android:textSize="30sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/guideline2"
@@ -42,6 +42,9 @@
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="20dp"
         android:stepSize="1.0"
+        android:value="13"
+        android:valueFrom="1"
+        android:valueTo="25"
         app:layout_constraintBottom_toTopOf="@+id/guideline2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -50,7 +53,7 @@
         app:thumbRadius="22.0dp"
         app:tickVisible="false"
         app:trackColorActive="?attr/colorPrimary"
-        app:trackColorInactive="?attr/colorPrimaryVariant"
+        app:trackColorInactive="?attr/colorOnTertiary"
         app:trackHeight="40.0dp"
         tools:ignore="SpeakableTextPresentCheck" />
 
@@ -65,11 +68,11 @@
         android:textColor="?attr/colorOnPrimary"
         android:textSize="30sp"
         android:textStyle="bold"
-        app:strokeColor="@color/cp_8"
-        app:strokeWidth="2dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guideline2" />
+        app:layout_constraintTop_toTopOf="@+id/guideline2"
+        app:strokeColor="?attr/colorPrimaryVariant"
+        app:strokeWidth="2dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_margin="10dp" >
+    android:layout_margin="10dp"
+    android:background="?attr/colorSurface">
 
     <com.google.android.material.card.MaterialCardView
         android:layout_width="match_parent"
@@ -24,16 +25,16 @@
                 android:id="@+id/CardImage"
                 android:layout_width="match_parent"
                 android:layout_height="194dp"
+                android:background="@color/cp_8"
                 android:contentDescription="@string/GameModeCardImageDescription"
                 android:scaleType="centerCrop"
-                android:background="@color/cp_8"
                 tools:ignore="ImageContrastCheck" />
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
                 android:background="?attr/colorPrimary"
+                android:orientation="vertical"
                 android:padding="16dp">
 
                 <TextView
@@ -57,16 +58,16 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:background="?attr/colorSecondaryVariant" >
+                android:background="?attr/colorPrimaryVariant"
+                android:orientation="horizontal">
+
                 <com.google.android.material.button.MaterialButton
+                    style="?attr/borderlessButtonStyle"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_marginEnd="8dp"
-                    android:textColor="?attr/colorOnPrimary"
                     android:text="@string/GameModeCardAction"
-                    style="?attr/borderlessButtonStyle"
-                    />
+                    android:textColor="?attr/colorOnPrimary" />
             </LinearLayout>
 
         </LinearLayout>
