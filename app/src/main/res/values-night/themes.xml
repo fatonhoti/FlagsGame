@@ -1,17 +1,12 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
-    <!-- Base application theme. -->
     <style name="Theme.Flags" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- TODO: Implement proper scheme for dark mode -->
         <item name="android:windowFullscreen">true</item>
-        <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/cp_8</item>
-        <item name="colorPrimaryVariant">@color/cp_2</item>
+        <item name="colorPrimary">?attr/colorOnSecondary</item>
+        <item name="colorPrimaryVariant">@color/primaryLightColor</item>
         <item name="colorOnPrimary">@color/white</item>
-        <!-- Secondary brand color. -->
-        <item name="colorSecondary">@color/cp_8</item>
-        <item name="colorSecondaryVariant">@color/cp_2</item>
-        <item name="colorOnSecondary">@color/black</item>
-        <!-- Status bar color. -->
-        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
-        <!-- Customize your theme here. -->
+        <item name="colorSecondary">@color/white</item>
+        <item name="colorSecondaryVariant">@color/primaryDarkColor</item>
+        <item name="colorSurface">@color/cp_8</item>
     </style>
 </resources>

@@ -1,17 +1,9 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
-    <!-- Base application theme. -->
     <style name="Theme.Flags" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <item name="android:windowFullscreen">true</item>
-        <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/cp_2</item>
-        <item name="colorPrimaryVariant">@color/cp_8</item>
-        <item name="colorOnPrimary">@color/cp_2</item>
-        <!-- Secondary brand color. -->
-        <item name="colorSecondary">@color/btnColor</item>
-        <item name="colorSecondaryVariant">@color/cp_8</item>
-        <item name="colorOnSecondary">@color/cp_8</item>
-        <!-- Status bar color. -->
-        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item> -->
-
+        <item name="colorPrimary">@color/primaryColor</item>
+        <item name="colorPrimaryVariant">@color/primaryLightColor</item>
+        <item name="colorSecondary">@color/white</item>
+        <item name="colorSecondaryVariant">@color/primaryDarkColor</item>
     </style>
 </resources>

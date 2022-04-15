@@ -4,15 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#EEF4FF"
+    android:background="?attr/colorSurface"
     tools:context=".GameFlagsActivity">
-
-    <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:contentDescription="@string/BackgroundContentDescription"
-        android:scaleType="centerCrop"
-        android:src="@drawable/world_map" />
 
     <ImageView
         android:id="@+id/ivFlagToGuess"
@@ -26,7 +19,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvCountriesLeft"
-        app:srcCompat="@drawable/xk" />
+        app:srcCompat="@drawable/de" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline2"
@@ -35,69 +28,78 @@
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.5" />
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/btnChoiceOne"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="25dp"
-        android:backgroundTint="?attr/colorSecondary"
+        android:layout_marginTop="24dp"
+        android:backgroundTint="?attr/colorPrimary"
         android:minWidth="350dp"
         android:padding="10dp"
         android:textAlignment="center"
-        android:textColor="@color/btnTextColor"
+        android:textColor="?attr/colorOnPrimary"
         android:textSize="20sp"
         android:textStyle="bold"
+        app:strokeColor="@color/cp_8"
+        app:strokeWidth="2dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.491"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/guideline2"
         tools:ignore="SpeakableTextPresentCheck" />
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/btnChoiceTwo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        android:backgroundTint="?attr/colorSecondary"
+        android:backgroundTint="?attr/colorPrimary"
         android:minWidth="350dp"
         android:padding="10dp"
         android:textAlignment="center"
-        android:textColor="@color/btnTextColor"
+        android:textColor="?attr/colorOnPrimary"
         android:textSize="20sp"
         android:textStyle="bold"
+        app:strokeColor="@color/cp_8"
+        app:strokeWidth="2dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnChoiceOne"
         tools:ignore="SpeakableTextPresentCheck" />
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/btnChoiceFour"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        android:backgroundTint="?attr/colorSecondary"
+        android:backgroundTint="?attr/colorPrimary"
         android:minWidth="350dp"
         android:padding="10dp"
         android:textAlignment="center"
-        android:textColor="@color/btnTextColor"
+        android:textColor="?attr/colorOnPrimary"
         android:textSize="20sp"
         android:textStyle="bold"
+        app:strokeColor="@color/cp_8"
+        app:strokeWidth="2dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnChoiceThree"
         tools:ignore="SpeakableTextPresentCheck" />
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/btnChoiceThree"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        android:backgroundTint="?attr/colorSecondary"
+        android:backgroundTint="?attr/colorPrimary"
         android:minWidth="350dp"
         android:padding="10dp"
         android:textAlignment="center"
-        android:textColor="@color/btnTextColor"
+        android:textColor="?attr/colorOnPrimary"
         android:textSize="20sp"
         android:textStyle="bold"
+        app:strokeColor="@color/cp_8"
+        app:strokeWidth="2dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnChoiceTwo"

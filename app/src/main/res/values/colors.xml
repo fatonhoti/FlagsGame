@@ -1,26 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- Default -->
-    <color name="purple_200">#FFBB86FC</color>
-    <color name="purple_500">#FF6200EE</color>
-    <color name="purple_700">#FF3700B3</color>
-    <color name="teal_200">#FF03DAC5</color>
-    <color name="teal_700">#FF018786</color>
+    <!-- Color Scheme -->
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="primaryColor">#166CC2</color>
+    <color name="primaryLightColor">#63a4ff</color>
+    <color name="primaryDarkColor">#004ba0</color>
+    <color name="primaryTextColor">#ffffff</color>
 
-    <!-- Color palette -->
-    <color name="primary_color">#03A9F4</color>
-    <color name="cp_1">#F8F9FA</color>
-    <color name="cp_2">#E9ECEF</color>
-    <color name="cp_3">#DEE2E6</color>
-    <color name="cp_4">#CED4DA</color>
-    <color name="cp_5">#ADB5BD</color>
-    <color name="cp_6">#6C757D</color>
-    <color name="cp_7">#495057</color>
-    <color name="cp_8">#343A40</color>
-    <color name="cp_9">#212529</color>
-    <color name="btnColor">#0077b6</color>
-    <color name="btnTextColor">#F0F4F4</color>
-
+    <!-- Auxiliary -->
+    <color name="cp_8">#343A40</color> <!-- Button Border -->
 </resources>

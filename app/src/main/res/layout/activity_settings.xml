@@ -4,18 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="?attr/colorSurface"
     tools:context=".SettingsActivity">
-
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:contentDescription="@string/BackgroundContentDescription"
-        android:scaleType="centerCrop"
-        android:src="@drawable/world_map"
-        tools:ignore="ImageContrastCheck"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="0dp" />
 
     <Switch
         android:id="@+id/switchDarkmode"
@@ -37,24 +27,24 @@
         android:layout_marginTop="100dp"
         android:text="@string/switchDarkmode"
         android:textAlignment="center"
-        android:textColor="?attr/colorSecondaryVariant"
+        android:textColor="?attr/colorOnSecondary"
         android:textSize="35sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/imageView2" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/btnClearStatistics"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
-        android:backgroundTint="@color/cp_8"
+        android:backgroundTint="?attr/colorOnSecondary"
         android:minWidth="350dp"
         android:padding="10dp"
         android:text="@string/btnClearStatistics"
         android:textAlignment="center"
-        android:textColor="@color/cp_2"
+        android:textColor="?attr/colorOnPrimary"
         android:textSize="25sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"

@@ -4,99 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/material_dynamic_neutral95"
     tools:context=".GameModesMenuActivity">
 
-    <ImageView
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvCards"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:contentDescription="@string/BackgroundContentDescription"
-        android:scaleType="centerCrop"
-        android:src="@drawable/world_map"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/btnFlags"
-        android:layout_width="250dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
-        android:backgroundTint="?attr/colorSecondary"
-        android:text="@string/GameModeMenuChoiceFlags"
-        android:textAlignment="center"
-        android:textColor="@color/btnTextColor"
-        android:textSize="25sp"
-        android:textStyle="bold"
-        app:strokeColor="@color/cp_8"
-        app:strokeWidth="2dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2" />
-
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/btnCapitals"
-        android:layout_width="250dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:backgroundTint="?attr/colorSecondary"
-        android:text="@string/GameModeMenuChoiceCapitals"
-        android:textAlignment="center"
-        android:textColor="@color/btnTextColor"
-        android:textSize="25sp"
-        android:textStyle="bold"
-        app:strokeColor="@color/cp_8"
-        app:strokeWidth="2dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnFlags" />
-
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/btnCurrencies"
-        android:layout_width="250dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:backgroundTint="?attr/colorSecondary"
-        android:text="@string/GameModeMenuChoiceCurrencies"
-        android:textAlignment="center"
-        android:textColor="@color/btnTextColor"
-        android:textSize="25sp"
-        android:textStyle="bold"
-        app:strokeColor="@color/cp_8"
-        app:strokeWidth="2dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnCapitals" />
-
-
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/btnGoBack"
-        android:layout_width="250dp"
-        android:layout_height="58dp"
-        android:layout_marginTop="10dp"
-        android:backgroundTint="@color/cp_9"
-        android:text="@string/btnBack"
-        android:textAlignment="center"
-        android:textColor="@color/btnTextColor"
-        android:textSize="25sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnCurrencies" />
-
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="100dp"
-        android:text="@string/GameModeMenuTitle"
-        android:textAlignment="center"
-        android:textColor="?attr/colorSecondaryVariant"
-        android:textSize="40sp"
-        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

@@ -13,46 +13,16 @@ class GameModesMenuActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_game_modes_menu)
 
-        /*val items = mutableListOf<ListItem>()
-        items.add(ListItem("FLAGS", "Do you know all the flags?"))
-        items.add(ListItem("CAPITALS", "What about the capitals?"))
-        items.add(ListItem("CURRENCIES", "Surely you don't know the currencies..."))
+        val items = mutableListOf<GameModeCard>()
+        items.add(GameModeCard("FLAGS", "Do you know all the flags?"))
+        items.add(GameModeCard("CAPITALS", "What about the capitals?"))
+        items.add(GameModeCard("CURRENCIES", "Surely you don't know the currencies..."))
 
-        val recyclerView: RecyclerView = findViewById(R.id.GameModeRecyclerView)
-        val adapter = RecyclerViewAdapter(items)
+        val recyclerView: RecyclerView = findViewById(R.id.rvCards)
+        val adapter = GameModeCardAdapter(items)
 
         recyclerView.layoutManager = LinearLayoutManager(this)
-        recyclerView.adapter = adapter*/
-
-        val btnFlags = findViewById<Button>(R.id.btnFlags)
-        btnFlags.setOnClickListener {
-            Intent(this, GameRegionMenuActivity::class.java).also {
-                it.putExtra("MODE", "FLAG")
-                startActivity(it)
-                finish()
-            }
-        }
-
-        val btnCapitals = findViewById<Button>(R.id.btnCapitals)
-        btnCapitals.setOnClickListener {
-            Intent(this, GameRegionMenuActivity::class.java).also {
-                it.putExtra("MODE", "CAPITAL")
-                startActivity(it)
-                finish()
-            }
-        }
-
-        val btnCurrencies = findViewById<Button>(R.id.btnCurrencies)
-        btnCurrencies.setOnClickListener {
-            Intent(this, GameRegionMenuActivity::class.java).also {
-                it.putExtra("MODE", "CURRENCY")
-                startActivity(it)
-                finish()
-            }
-        }
-
-        val btnGoBack = findViewById<Button>(R.id.btnGoBack)
-        btnGoBack.setOnClickListener { finish() }
+        recyclerView.adapter = adapter
 
     }
 }

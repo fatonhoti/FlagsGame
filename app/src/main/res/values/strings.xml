@@ -42,9 +42,12 @@
 
     <!-- ACTIVITY: Settings -->
     <string name="switchDarkmode">Toggle dark mode</string>
-    <string name="btnIntegrity">Integrity</string>
-    <string name="btnAck">Acknowledgements</string>
-    <string name="btnLicense">License</string>
     <string name="btnClearStatistics">Clear statistics</string>
+
+    <!-- Game Mode Card -->
+    <string name="GameModeCardTitleDefault">GameName</string>
+    <string name="GameModeCardSecondaryTextDefault">QuestionHere</string>
+    <string name="GameModeCardAction">Start</string>
+    <string name="GameModeCardImageDescription">An image that is correlated to the game mode the card represents.</string>
 
 </resources>
