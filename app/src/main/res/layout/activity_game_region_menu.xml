@@ -14,9 +14,9 @@
         android:scaleType="centerCrop"
         android:contentDescription="@string/BackgroundContentDescription"/>
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/btnFlags"
-        android:layout_width="250dp"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
         android:backgroundTint="?attr/colorSecondary"
@@ -28,11 +28,13 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+        app:layout_constraintTop_toBottomOf="@+id/textView2"
+        app:strokeColor="@color/cp_8"
+        app:strokeWidth="2dp" />
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/btnCapitals"
-        android:layout_width="250dp"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:backgroundTint="?attr/colorSecondary"
@@ -44,11 +46,13 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnFlags" />
+        app:layout_constraintTop_toBottomOf="@+id/btnFlags"
+        app:strokeColor="@color/cp_8"
+        app:strokeWidth="2dp" />
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/btnCurrencies"
-        android:layout_width="250dp"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:backgroundTint="?attr/colorSecondary"
@@ -60,11 +64,13 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnCapitals" />
+        app:layout_constraintTop_toBottomOf="@+id/btnCapitals"
+        app:strokeColor="@color/cp_8"
+        app:strokeWidth="2dp" />
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/btnAfrica"
-        android:layout_width="250dp"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:backgroundTint="?attr/colorSecondary"
@@ -76,11 +82,13 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnCurrencies" />
+        app:layout_constraintTop_toBottomOf="@+id/btnCurrencies"
+        app:strokeColor="@color/cp_8"
+        app:strokeWidth="2dp" />
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/btnNorthAmerica"
-        android:layout_width="250dp"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:backgroundTint="?attr/colorSecondary"
@@ -92,11 +100,13 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnAfrica" />
+        app:layout_constraintTop_toBottomOf="@+id/btnAfrica"
+        app:strokeColor="@color/cp_8"
+        app:strokeWidth="2dp" />
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/btnSouthAmerica"
-        android:layout_width="250dp"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:backgroundTint="?attr/colorSecondary"
@@ -108,11 +118,13 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnNorthAmerica" />
+        app:layout_constraintTop_toBottomOf="@+id/btnNorthAmerica"
+        app:strokeColor="@color/cp_8"
+        app:strokeWidth="2dp" />
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/btnOceania"
-        android:layout_width="250dp"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:backgroundTint="?attr/colorSecondary"
@@ -124,11 +136,13 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnSouthAmerica" />
+        app:layout_constraintTop_toBottomOf="@+id/btnSouthAmerica"
+        app:strokeColor="@color/cp_8"
+        app:strokeWidth="2dp" />
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/btnGoBack"
-        android:layout_width="250dp"
+        android:layout_width="300dp"
         android:layout_height="58dp"
         android:layout_marginTop="20dp"
         android:backgroundTint="@color/cp_9"

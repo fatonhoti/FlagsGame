@@ -17,7 +17,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/btnFlags"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
@@ -28,12 +28,14 @@
         android:textColor="@color/btnTextColor"
         android:textSize="25sp"
         android:textStyle="bold"
+        app:strokeColor="@color/cp_8"
+        app:strokeWidth="2dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/btnCapitals"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
@@ -44,12 +46,14 @@
         android:textColor="@color/btnTextColor"
         android:textSize="25sp"
         android:textStyle="bold"
+        app:strokeColor="@color/cp_8"
+        app:strokeWidth="2dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnFlags" />
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/btnCurrencies"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
@@ -60,13 +64,15 @@
         android:textColor="@color/btnTextColor"
         android:textSize="25sp"
         android:textStyle="bold"
+        app:strokeColor="@color/cp_8"
+        app:strokeWidth="2dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnCapitals" />
 
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/btnGoBack"
         android:layout_width="250dp"
         android:layout_height="58dp"

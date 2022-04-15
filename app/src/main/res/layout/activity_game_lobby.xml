@@ -64,7 +64,8 @@
         app:tickVisible="false"
         app:trackColorActive="@color/btnColor"
         app:trackColorInactive="@color/cp_3"
-        app:trackHeight="40.0dp" />
+        app:trackHeight="40.0dp"
+        tools:ignore="SpeakableTextPresentCheck" />
 
     <Button
         android:id="@+id/btnGameLobbyStart"

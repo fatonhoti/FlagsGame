@@ -10,9 +10,11 @@
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:src="@drawable/world_map"
+        android:contentDescription="@string/BackgroundContentDescription"
         android:scaleType="centerCrop"
-        android:contentDescription="@string/BackgroundContentDescription"/>
+        android:src="@drawable/world_map"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="0dp" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline9"
@@ -32,35 +34,39 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/country_globe" />
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/mm_btnStart"
         android:layout_width="300dp"
         android:layout_height="100dp"
         android:layout_marginTop="25dp"
-        android:backgroundTint="?attr/colorSecondary"
         android:fontFamily="@font/raleway_bold"
-        android:text="@string/btnStart"
-        android:textAlignment="center"
-        android:textColor="@color/btnTextColor"
+        android:textColor="#F0F4F4"
         android:textSize="30sp"
+        android:textAlignment="center"
+        android:width="300dp"
+        android:height="100dp"
+        android:text="@string/btnStart"
+        android:backgroundTint="?attr/colorSecondary"
+        app:strokeColor="@color/cp_8"
+        app:strokeWidth="2dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guideline9" />
+        app:layout_constraintTop_toBottomOf="@+id/mm_globe" />
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/btnSettings"
         android:layout_width="300dp"
         android:layout_height="100dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="25dp"
         android:backgroundTint="?attr/colorSecondary"
         android:fontFamily="@font/raleway_bold"
         android:text="@string/btnSettings"
         android:textAlignment="center"
         android:textColor="#F0F4F4"
         android:textSize="30sp"
+        app:strokeColor="@color/cp_8"
+        app:strokeWidth="2dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/mm_btnStart" />
 
