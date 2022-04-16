@@ -28,9 +28,6 @@ import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.widget.Button
-import android.widget.SeekBar
-import android.widget.SeekBar.OnSeekBarChangeListener
-import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.blongho.country_data.Country
 import com.blongho.country_data.World
@@ -63,9 +60,9 @@ class GameLobbyActivity : AppCompatActivity() {
             val btnStart = findViewById<Button>(R.id.btnGameLobbyStart)
             btnStart.setOnClickListener {
                 val i: Intent? = when (intent.getStringExtra("MODE")) {
-                    "FLAG" -> createIntent(GameFlagsActivity::class.java, countries, flagCount)
-                    "CAPITAL" -> createIntent(GameCapitalsActivity::class.java, countries, flagCount)
-                    "CURRENCY" -> createIntent(GameCurrenciesActivity::class.java, countries, flagCount)
+                    "FLAGS" -> createIntent(GameFlagsActivity::class.java, countries, flagCount)
+                    "CAPITALS" -> createIntent(GameCapitalsActivity::class.java, countries, flagCount)
+                    "CURRENCIES" -> createIntent(GameCurrenciesActivity::class.java, countries, flagCount)
                     else -> null
                 }
 
@@ -103,18 +100,6 @@ class GameLobbyActivity : AppCompatActivity() {
                 World.getCountriesFrom(World.Continent.valueOf(region))
             }
         }
-    }
-
-    private fun runFlagGame() {
-
-    }
-
-    private fun runCapitalGame() {
-
-    }
-
-    private fun runCurrencyGame() {
-
     }
 
 }

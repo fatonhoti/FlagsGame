@@ -1,19 +1,24 @@
 package com.fatonhoti.flags
 
+import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import android.widget.ImageView
 import android.widget.TextView
+import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
 
-class GameModeCardAdapter(cards: MutableList<GameModeCard>) : RecyclerView.Adapter<GameModeCardAdapter.ViewHolder>() {
-
-    private val cards = cards
+class GameModeCardAdapter(private val cards: MutableList<GameModeCard>) : RecyclerView.Adapter<GameModeCardAdapter.ViewHolder>() {
 
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
-        // val ivImage = view.findViewById<ImageView>(R.id.CardImage)
+        val ivImage = view.findViewById<ImageView>(R.id.CardImage)
         val tvTitle: TextView = view.findViewById(R.id.CardTitle)
         val tvSecondaryText: TextView = view.findViewById(R.id.CardSecondaryText)
+        val btnStart: Button = view.findViewById(R.id.btnStart)
+        val context: Context = view.context
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -23,9 +28,16 @@ class GameModeCardAdapter(cards: MutableList<GameModeCard>) : RecyclerView.Adapt
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        // holder.tvImage.setImageResource(cards[position].image)
+        holder.ivImage.setImageResource(cards[position].image)
         holder.tvTitle.text = cards[position].title
         holder.tvSecondaryText.text = cards[position].secondaryText
+        holder.btnStart.setOnClickListener {
+            val gameMode = holder.tvTitle.text
+            val i = Intent(holder.context, GameRegionMenuActivity::class.java).also {
+                it.putExtra("MODE", gameMode)
+            }
+            holder.context.startActivity(i)
+        }
     }
 
     override fun getItemCount(): Int {
