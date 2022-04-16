@@ -56,7 +56,11 @@ class GameCapitalsActivity : AppCompatActivity() {
         @Suppress("UNCHECKED_CAST")
         val countries = intent.getSerializableExtra("COUNTRIES") as MutableList<Country>
         val capitals = getCapitals(countries)
-        val max = intent.getIntExtra("MAX", 1)
+
+        // getCapitals above may return a smaller subset of 'countries' due to invalid
+        // entries caused by the used API (worldCountryData)
+        // therefore we have to subtract the difference so not to get out of bounds errors
+        val max = intent.getIntExtra("MAX", 1) - (countries.size - capitals.size)
         tvCountriesLeft.text = "Left:$max"
 
         // Select 'max' countries at random that the user will try to guess
@@ -105,8 +109,8 @@ class GameCapitalsActivity : AppCompatActivity() {
 
     private fun getCapitals(countries: MutableList<Country>) : MutableList<String> {
         val capitals = mutableListOf<String>()
-        countries.forEach {
-            capitals.add(it.capital)
+        countries.filter { c -> c.capital != null }.forEach {
+                capitals.add(it.capital)
         }
         return capitals
     }

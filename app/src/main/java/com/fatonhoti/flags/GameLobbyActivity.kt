@@ -46,6 +46,7 @@ class GameLobbyActivity : AppCompatActivity() {
             // Fetch all the countries of the region
             val region = intent.getStringExtra("REGION")!!.uppercase()
             val countries = getCountries(region)
+            Log.i("cap", "Countries size: " + countries.size.toString())
 
             var flagCount = countries.size / 2
             val sbCounter = findViewById<Slider>(R.id.sbMaterial)
