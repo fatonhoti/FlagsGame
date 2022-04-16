@@ -7,6 +7,18 @@
     android:background="?attr/colorSurface"
     tools:context=".GameOverActivity">
 
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:contentDescription="@string/BackgroundContentDescription"
+        android:scaleType="centerCrop"
+        android:src="@drawable/world_map"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
@@ -103,16 +115,16 @@
         android:id="@+id/btnMainMenu"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="25dp"
+        android:layout_marginTop="25dp"
         android:backgroundTint="?attr/colorPrimary"
         android:text="@string/btnMainMenu"
         android:textAlignment="center"
         android:textColor="?attr/colorOnPrimary"
         android:textSize="35sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline4"
         app:strokeColor="?attr/colorPrimaryVariant"
         app:strokeWidth="2dp" />
 

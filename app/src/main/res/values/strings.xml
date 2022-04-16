@@ -6,7 +6,7 @@
     <string name="btnBack">Go Back</string>
     <string name="btnMainMenu">Main Menu</string>
     <string name="btnSettings">Settings</string>
-    <string name="BackgroundContentDescription">World Map</string>
+    <string name="BackgroundContentDescription">A background image of the world map</string>
     <string name="tvLetsPlay">Let\'s play!</string>
 
     <!-- ACTIVITY: MainActivity -->
