@@ -8,13 +8,12 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
-import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
 
 class GameModeCardAdapter(private val cards: MutableList<GameModeCard>) : RecyclerView.Adapter<GameModeCardAdapter.ViewHolder>() {
 
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
-        val ivImage = view.findViewById<ImageView>(R.id.CardImage)
+        val ivImage: ImageView = view.findViewById(R.id.CardImage)
         val tvTitle: TextView = view.findViewById(R.id.CardTitle)
         val tvSecondaryText: TextView = view.findViewById(R.id.CardSecondaryText)
         val btnStart: Button = view.findViewById(R.id.btnStart)

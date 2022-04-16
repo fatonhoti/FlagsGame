@@ -5,17 +5,13 @@ import android.app.AlertDialog
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import com.blongho.country_data.Country
 import com.blongho.country_data.World
-import java.lang.Exception
 import java.util.*
 import java.util.concurrent.ThreadLocalRandom
-import kotlin.collections.ArrayList
-import kotlin.collections.HashMap
 
 class GameCapitalsActivity : AppCompatActivity() {
 

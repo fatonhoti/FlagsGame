@@ -36,7 +36,6 @@ import com.blongho.country_data.Country
 import com.blongho.country_data.World
 import java.util.*
 import java.util.concurrent.ThreadLocalRandom
-import kotlin.collections.HashMap
 
 class GameFlagsActivity : AppCompatActivity() {
 
