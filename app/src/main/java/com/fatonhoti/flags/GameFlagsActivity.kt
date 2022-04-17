@@ -44,6 +44,7 @@ class GameFlagsActivity : AppCompatActivity() {
     private lateinit var ivFlagToGuess: ImageView
     private lateinit var tvCountriesLeft: TextView
     private lateinit var btnChoices: List<Button>
+    private val guesses = HashMap<Country, Pair<Boolean, String>>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -98,8 +99,10 @@ class GameFlagsActivity : AppCompatActivity() {
                 val guess = btn.text.toString()
                 if(guess == countryToGuess.name) {
                     correctGuesses++
+                    guesses[countryToGuess] = Pair(true, guess)
                 } else {
                     incorrectGuesses++
+                    guesses[countryToGuess] = Pair(false, guess)
                 }
 
                 if(selectedCountries.isEmpty()) {
@@ -108,6 +111,8 @@ class GameFlagsActivity : AppCompatActivity() {
                         it.putExtra("correctGuesses", correctGuesses)
                         it.putExtra("incorrectGuesses", incorrectGuesses)
                         it.putExtra("region", countries[0].continent)
+                        it.putExtra("guesses", guesses)
+                        it.putExtra("gameMode", intent.getStringExtra("MODE"))
                         startActivity(it)
                         finish()
                     }

@@ -10,9 +10,6 @@ class GameModesMenuActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_game_modes_menu)
 
-        // TODO: Make buttons in each card in the RecyclerView actually clickable and reactive
-        // TODO: Make cards in RecyclerView actually display suitable images
-
         val items = mutableListOf<GameModeCard>()
 
         val flagsImage = resources.getIdentifier("game_mode_flags_image", "drawable", "com.fatonhoti.flags")

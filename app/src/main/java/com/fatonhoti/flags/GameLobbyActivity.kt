@@ -85,6 +85,7 @@ class GameLobbyActivity : AppCompatActivity() {
         return Intent(this, ActivityClass).also{
             it.putParcelableArrayListExtra("COUNTRIES", ArrayList(countries))
             it.putExtra("MAX", flagCount)
+            it.putExtra("MODE", intent.getStringExtra("MODE"))
         }
     }
 
