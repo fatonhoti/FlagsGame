@@ -50,4 +50,10 @@
     <string name="GameModeCardAction">Start</string>
     <string name="GameModeCardImageDescription">An image that is correlated to the game mode the card represents.</string>
 
+    <!-- "Go back" dialog -->
+    <string name="GoBackDialogTitle">Are you sure?</string>
+    <string name="GoBackDialogSupportingText">Going back will lose you all progress!</string>
+    <string name="GoBackDialogYes">Yes</string>
+    <string name="GoBackDialogCancel">Cancel</string>
+
 </resources>

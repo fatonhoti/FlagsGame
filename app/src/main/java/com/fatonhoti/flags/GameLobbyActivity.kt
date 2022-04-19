@@ -61,9 +61,9 @@ class GameLobbyActivity : AppCompatActivity() {
             val btnStart = findViewById<Button>(R.id.btnGameLobbyStart)
             btnStart.setOnClickListener {
                 val i: Intent? = when (intent.getStringExtra("MODE")) {
-                    "FLAGS" -> createIntent(GameFlagsActivity::class.java, countries, flagCount)
-                    "CAPITALS" -> createIntent(GameCapitalsActivity::class.java, countries, flagCount)
-                    "CURRENCIES" -> createIntent(GameCurrenciesActivity::class.java, countries, flagCount)
+                    "FLAGS" -> createIntent(GameModeFlagsActivity::class.java, countries, flagCount)
+                    "CAPITALS" -> createIntent(GameModeCapitalsActivity::class.java, countries, flagCount)
+                    "CURRENCIES" -> createIntent(GameModeCurrenciesActivity::class.java, countries, flagCount)
                     else -> null
                 }
 

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.fatonhoti.flags">
     <!-- normal => phones -->
     <!-- large  => 7" tablets -->
@@ -17,10 +18,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Flags">
         <activity
-            android:name=".GameCurrenciesActivity"
+            android:name=".GameModeFlagsActivity"
             android:exported="false" />
         <activity
-            android:name=".GameCapitalsActivity"
+            android:name=".GameModeCapitalsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".GameModeCurrenciesActivity"
             android:exported="false" />
         <activity
             android:name=".GameModesMenuActivity"
@@ -31,9 +35,6 @@
             android:label="@string/title_activity_settings" />
         <activity
             android:name=".GameOverActivity"
-            android:exported="false" />
-        <activity
-            android:name=".GameFlagsActivity"
             android:exported="false" />
         <activity
             android:name=".GameLobbyActivity"
