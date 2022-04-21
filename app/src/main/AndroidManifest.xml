@@ -27,6 +27,9 @@
             android:name=".GameModeCurrenciesActivity"
             android:exported="false" />
         <activity
+            android:name=".GameModeLanguagesActivity"
+            android:exported="false" />
+        <activity
             android:name=".GameModesMenuActivity"
             android:exported="false" />
         <activity

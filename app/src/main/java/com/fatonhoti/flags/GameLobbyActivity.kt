@@ -64,6 +64,7 @@ class GameLobbyActivity : AppCompatActivity() {
                     "FLAGS" -> createIntent(GameModeFlagsActivity::class.java, countries, flagCount)
                     "CAPITALS" -> createIntent(GameModeCapitalsActivity::class.java, countries, flagCount)
                     "CURRENCIES" -> createIntent(GameModeCurrenciesActivity::class.java, countries, flagCount)
+                    "LANGUAGES" -> createIntent(GameModeLanguagesActivity::class.java, countries, flagCount)
                     else -> null
                 }
 

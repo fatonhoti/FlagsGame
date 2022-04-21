@@ -40,37 +40,18 @@ class GameOverActivity : AppCompatActivity() {
 
     private fun buildCards(guesses: HashMap<Country, Pair<Boolean, String>>, gameMode: String) : MutableList<GameOverResultCard> {
         val items = mutableListOf<GameOverResultCard>()
-        when(gameMode) {
-            "FLAGS" -> {
-                guesses.forEach {
-                    val image = it.key.flagResource
-                    val countryName = it.key.name
-                    val correctAnswer = it.key.name
-                    val incorrectAnswer = it.value.second
-                    items.add(GameOverResultCard(countryName, correctAnswer, incorrectAnswer, image))
-                }
+        guesses.forEach {
+            val image = it.key.flagResource
+            val countryName = it.key.name
+            var correctAnswer = ""
+            when(gameMode) {
+                "FLAGS" -> { correctAnswer = it.key.name }
+                "CAPITALS" -> { correctAnswer = it.key.capital }
+                "CURRENCIES" -> { correctAnswer = it.key.currency.name }
+                "LANGUAGES" -> { correctAnswer = it.key.languages.split(",")[0] }
             }
-            "CAPITALS" -> {
-                guesses.forEach {
-                    val image = it.key.flagResource
-                    val countryName = it.key.name
-                    val correctAnswer = it.key.capital
-                    val incorrectAnswer = it.value.second
-                    items.add(GameOverResultCard(countryName, correctAnswer, incorrectAnswer, image))
-                }
-            }
-            "CURRENCIES" -> {
-                guesses.forEach {
-                    val image = it.key.flagResource
-                    val countryName = it.key.name
-                    val correctAnswer = it.key.currency.name
-                    val incorrectAnswer = it.value.second
-                    items.add(GameOverResultCard(countryName, correctAnswer, incorrectAnswer, image))
-                }
-            }
-            else -> {
-                // TODO: Handle somehow, this should never occur
-            }
+            val incorrectAnswer = it.value.second
+            items.add(GameOverResultCard(countryName, correctAnswer, incorrectAnswer, image))
         }
         return items
     }
@@ -79,43 +60,38 @@ class GameOverActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_game_over)
+        // Fetch the game data
+        val guesses = intent.getSerializableExtra("guesses") as HashMap<Country, Pair<Boolean, String>>
+        val gameMode = intent.getStringExtra("gameMode")!!
 
-        try {
-            // Fetch the game data
-            val guesses = intent.getSerializableExtra("guesses") as HashMap<Country, Pair<Boolean, String>>
-            val gameMode = intent.getStringExtra("gameMode")!!
+        // Build the cards
+        val items = buildCards(guesses, gameMode)
 
-            // Build the cards
-            val items = buildCards(guesses, gameMode)
+        // Setup the RecyclerView
+        val recyclerView: RecyclerView = findViewById(R.id.rvResults)
+        val adapter = GameOverResultCardAdapter(items)
+        recyclerView.layoutManager = LinearLayoutManager(this)
+        recyclerView.adapter = adapter
 
-            // Setup the RecyclerView
-            val recyclerView: RecyclerView = findViewById(R.id.rvResults)
-            val adapter = GameOverResultCardAdapter(items)
-            recyclerView.layoutManager = LinearLayoutManager(this)
-            recyclerView.adapter = adapter
+        // Display other information
+        val region = intent.getStringExtra("region")
+        val tvRegion = findViewById<TextView>(R.id.tvRegion)
+        tvRegion.text = "Region: $region"
 
-            // Display other information
-            val region = intent.getStringExtra("region")
-            val tvRegion = findViewById<TextView>(R.id.tvRegion)
-            tvRegion.text = "Region: $region"
+        val countCorrect = intent.getIntExtra("correctGuesses", 0)
+        val correctGuesses = findViewById<TextView>(R.id.tvGuessesCorrect)
+        correctGuesses.text = countCorrect.toString()
 
-            val countCorrect = intent.getIntExtra("correctGuesses", 0)
-            val correctGuesses = findViewById<TextView>(R.id.tvGuessesCorrect)
-            correctGuesses.text = countCorrect.toString()
+        val countIncorrect = intent.getIntExtra("incorrectGuesses", 0)
+        val incorrectGuesses = findViewById<TextView>(R.id.tvGuessesIncorrect)
+        incorrectGuesses.text = countIncorrect.toString()
 
-            val countIncorrect = intent.getIntExtra("incorrectGuesses", 0)
-            val incorrectGuesses = findViewById<TextView>(R.id.tvGuessesIncorrect)
-            incorrectGuesses.text = countIncorrect.toString()
-
-            val btnMainMenu = findViewById<Button>(R.id.btnMainMenu)
-            btnMainMenu.setOnClickListener {
-                Intent(this, GameModesMenuActivity::class.java).also {
-                    startActivity(it)
-                    finish()
-                }
+        val btnMainMenu = findViewById<Button>(R.id.btnMainMenu)
+        btnMainMenu.setOnClickListener {
+            Intent(this, GameModesMenuActivity::class.java).also {
+                startActivity(it)
+                finish()
             }
-        } catch(e: Exception) {
-            Log.e("over", e.stackTraceToString())
         }
     }
 }
