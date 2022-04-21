@@ -1,5 +1,6 @@
 package com.fatonhoti.flags
 
+import android.app.Activity
 import android.content.Context
 import android.content.Intent
 import android.view.LayoutInflater
@@ -36,6 +37,7 @@ class GameModeCardAdapter(private val cards: MutableList<GameModeCard>) : Recycl
                 it.putExtra("MODE", gameMode)
             }
             holder.context.startActivity(i)
+            (holder.context as Activity).finish()
         }
     }
 
