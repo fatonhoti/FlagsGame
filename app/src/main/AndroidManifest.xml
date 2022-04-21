@@ -30,6 +30,9 @@
             android:name=".GameModeLanguagesActivity"
             android:exported="false" />
         <activity
+            android:name=".GameModeContinentsActivity"
+            android:exported="false" />
+        <activity
             android:name=".GameModesMenuActivity"
             android:exported="false" />
         <activity

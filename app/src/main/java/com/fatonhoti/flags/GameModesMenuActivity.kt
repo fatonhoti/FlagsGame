@@ -28,6 +28,10 @@ class GameModesMenuActivity : AppCompatActivity() {
         val languages = GameModeCard("LANGUAGES", "Surely you don't know all the currencies...", languagesImage)
         items.add(languages)
 
+        val continentsImage = resources.getIdentifier("game_mode_currencies_image", "drawable", "com.fatonhoti.flags")
+        val continents = GameModeCard("CONTINENTS", "Surely you don't know all the currencies...", continentsImage)
+        items.add(continents)
+
         val recyclerView: RecyclerView = findViewById(R.id.rvCards)
         val adapter = GameModeCardAdapter(items)
         recyclerView.layoutManager = LinearLayoutManager(this)

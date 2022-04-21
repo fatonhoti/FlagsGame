@@ -33,8 +33,14 @@ class GameModeCardAdapter(private val cards: MutableList<GameModeCard>) : Recycl
         holder.tvSecondaryText.text = cards[position].secondaryText
         holder.btnStart.setOnClickListener {
             val gameMode = holder.tvTitle.text
-            val i = Intent(holder.context, GameRegionMenuActivity::class.java).also {
-                it.putExtra("MODE", gameMode)
+            val i = if(gameMode == "CONTINENTS") {
+                Intent(holder.context, GameModeContinentsActivity::class.java).also {
+                    it.putExtra("MODE", gameMode)
+                }
+            }else {
+                Intent(holder.context, GameRegionMenuActivity::class.java).also {
+                    it.putExtra("MODE", gameMode)
+                }
             }
             holder.context.startActivity(i)
             (holder.context as Activity).finish()

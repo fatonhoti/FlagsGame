@@ -27,31 +27,45 @@ package com.fatonhoti.flags
 import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.widget.Button
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.blongho.country_data.Country
-import java.lang.Exception
+import com.blongho.country_data.World
 
 class GameOverActivity : AppCompatActivity() {
 
-    private fun buildCards(guesses: HashMap<Country, Pair<Boolean, String>>, gameMode: String) : MutableList<GameOverResultCard> {
+    @Suppress("UNCHECKED_CAST")
+    private fun buildCards(guesses: HashMap<*, *>, gameMode: String) : MutableList<GameOverResultCard> {
         val items = mutableListOf<GameOverResultCard>()
-        guesses.forEach {
-            val image = it.key.flagResource
-            val countryName = it.key.name
-            var correctAnswer = ""
-            when(gameMode) {
-                "FLAGS" -> { correctAnswer = it.key.name }
-                "CAPITALS" -> { correctAnswer = it.key.capital }
-                "CURRENCIES" -> { correctAnswer = it.key.currency.name }
-                "LANGUAGES" -> { correctAnswer = it.key.languages.split(",")[0] }
+        val defType = "drawable"
+        val defPackage = "com.fatonhoti.flags"
+        if(gameMode == "CONTINENTS") {
+            (guesses as HashMap<World.Continent, String>).forEach {
+                val flag: Int = when(it.key) {
+                    World.Continent.EUROPE -> { resources.getIdentifier("europe", defType, defPackage) }
+                    World.Continent.ASIA -> {resources.getIdentifier("asia", defType, defPackage) }
+                    World.Continent.AFRICA -> { resources.getIdentifier("africa", defType, defPackage) }
+                    World.Continent.NORTH_AMERICA -> { resources.getIdentifier("north_america", defType, defPackage) }
+                    World.Continent.SOUTH_AMERICA -> { resources.getIdentifier("south_america", defType, defPackage) }
+                    World.Continent.ANTARCTICA -> { resources.getIdentifier("antarctica", defType, defPackage) }
+                    World.Continent.OCEANIA -> { resources.getIdentifier("oceania", defType, defPackage) }
+                }
+                items.add(GameOverResultCard(it.key.name, it.key.name, it.value, flag))
             }
-            val incorrectAnswer = it.value.second
-            items.add(GameOverResultCard(countryName, correctAnswer, incorrectAnswer, image))
+        } else {
+            (guesses as HashMap<Country, String>).forEach {
+                var correctAnswer = ""
+                when(gameMode) {
+                    "FLAGS"      -> { correctAnswer = it.key.name }
+                    "CAPITALS"   -> { correctAnswer = it.key.capital }
+                    "CURRENCIES" -> { correctAnswer = it.key.currency.name }
+                    "LANGUAGES"  -> { correctAnswer = it.key.languages.split(",")[0] }
+                }
+                items.add(GameOverResultCard(it.key.name, correctAnswer, it.value, it.key.flagResource))
+            }
         }
         return items
     }
@@ -61,7 +75,7 @@ class GameOverActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_game_over)
         // Fetch the game data
-        val guesses = intent.getSerializableExtra("guesses") as HashMap<Country, Pair<Boolean, String>>
+        val guesses = intent.getSerializableExtra("guesses") as HashMap<*, *>
         val gameMode = intent.getStringExtra("gameMode")!!
 
         // Build the cards
