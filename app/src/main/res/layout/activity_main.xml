@@ -40,7 +40,7 @@
     <com.google.android.material.button.MaterialButton
         android:id="@+id/mm_btnStart"
         android:layout_width="300dp"
-        android:layout_height="100dp"
+        android:layout_height="80dp"
         android:layout_marginTop="25dp"
         android:width="300dp"
         android:height="100dp"
@@ -59,7 +59,7 @@
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btnSettings"
         android:layout_width="300dp"
-        android:layout_height="100dp"
+        android:layout_height="80dp"
         android:layout_marginTop="25dp"
         android:backgroundTint="?attr/colorPrimary"
         android:fontFamily="@font/raleway_bold"
@@ -68,6 +68,25 @@
         android:textColor="?attr/colorOnPrimary"
         android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.521"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnAchievements"
+        app:strokeColor="?attr/colorPrimaryVariant"
+        app:strokeWidth="2dp" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnAchievements"
+        android:layout_width="300dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="25dp"
+        android:backgroundTint="?attr/colorPrimary"
+        android:fontFamily="@font/raleway_bold"
+        android:text="@string/btnAchievements"
+        android:textAlignment="center"
+        android:textColor="?attr/colorOnPrimary"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.521"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/mm_btnStart"
         app:strokeColor="?attr/colorPrimaryVariant"

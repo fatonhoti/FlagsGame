@@ -18,6 +18,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Flags">
         <activity
+            android:name=".AchievementsActivity"
+            android:exported="false" />
+        <activity
             android:name=".GameModeFlagsActivity"
             android:exported="false" />
         <activity
