@@ -43,15 +43,11 @@ import kotlin.coroutines.suspendCoroutine
 
 class MainActivity : AppCompatActivity() {
 
-    suspend fun test() : MediaSession.Token {
-        return suspendCoroutine {  }
-    }
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        //applicationContext.deleteDatabase("database-name")
+        /* //applicationContext.deleteDatabase("database-name")
         val achievementDao = Room.databaseBuilder(
                 applicationContext,
                 AppDatabase::class.java,"database-name"
@@ -63,7 +59,7 @@ class MainActivity : AppCompatActivity() {
             Log.i("database", achievementDao.getAll().toString())
             Log.i("database", achievementDao.getAllComplete().toString())
             Log.i("database", achievementDao.getAllIncomplete().toString())
-        }
+        }*/
 
         // Set relevant theme depending on phone's mode (LIGHT or DARK)
         val currentNightMode = (resources.configuration.uiMode
@@ -99,4 +95,5 @@ class MainActivity : AppCompatActivity() {
         }
 
     }
+
 }
