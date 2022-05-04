@@ -1,9 +1,6 @@
 package com.fatonhoti.flags
 
-import androidx.room.Dao
-import androidx.room.Delete
-import androidx.room.Insert
-import androidx.room.Query
+import androidx.room.*
 
 @Dao
 interface AchievementDAO {
@@ -16,8 +13,14 @@ interface AchievementDAO {
     @Query("SELECT * FROM achievement WHERE Completed = 'false'")
     fun getAllIncomplete(): List<Achievement>
 
-    @Insert
-    fun insertAll(vararg Achievements: Achievement)
+    @Query("SELECT * FROM achievement WHERE GameMode = :gameMode")
+    fun getAllGameMode(gameMode: String): List<Achievement>
+
+    @Update(entity = Achievement::class)
+    fun updateAchievement(achievement: Achievement)
+
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    fun insertAll(achievements: MutableList<Achievement>)
 
     @Delete
     fun delete(achievement: Achievement)

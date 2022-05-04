@@ -19,7 +19,7 @@ class GameModeLanguagesActivity: AppCompatActivity(), GameMode {
     private lateinit var guessesLeft: TextView
     private lateinit var buttons: List<Button>
     private lateinit var countries: MutableList<Country>
-    private lateinit var userGuesses: HashMap<Country, Pair<Boolean, String>>
+    private lateinit var userGuesses: HashMap<Country, String>
     private var maxGuesses: Int = 0
     private var correct: Int = 0
     private var incorrect: Int = 0
@@ -65,10 +65,10 @@ class GameModeLanguagesActivity: AppCompatActivity(), GameMode {
         val primaryLanguage = selectedCountry.languages.split(",")[0]
         if(guess == primaryLanguage) {
             correct++
-            userGuesses[selectedCountry] = Pair(true, guess)
+            userGuesses[selectedCountry] = guess
         } else {
             incorrect++
-            userGuesses[selectedCountry] = Pair(false, guess)
+            userGuesses[selectedCountry] = guess
         }
     }
 

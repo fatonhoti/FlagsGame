@@ -34,8 +34,13 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.blongho.country_data.Country
 import com.blongho.country_data.World
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.launch
+import java.time.LocalDate
 
 class GameOverActivity : AppCompatActivity() {
+
+    private var db = MyApplication.applicationContext().getDbAchievements()
 
     @Suppress("UNCHECKED_CAST")
     private fun buildCards(guesses: HashMap<*, *>, gameMode: String) : MutableList<GameOverResultCard> {
@@ -68,6 +73,24 @@ class GameOverActivity : AppCompatActivity() {
             }
         }
         return items
+    }
+
+    @Suppress("UNCHECKED_CAST")
+    private fun updateAchievements(gameMode: String, countCorrect: Int) {
+        GlobalScope.launch {
+            val achievements = db.getAllGameMode(gameMode)
+            achievements.forEach {
+                it.progress += countCorrect
+                if(it.completed == "true") {
+                    it.progress = it.limit
+                } else if(it.completed == "false" && it.progress >= it.limit) {
+                    it.completed = "true"
+                    it.date = LocalDate.now().toString()
+                    it.progress = it.limit
+                }
+                db.updateAchievement(it)
+            }
+        }
     }
 
     @SuppressLint("SetTextI18n")
@@ -107,5 +130,9 @@ class GameOverActivity : AppCompatActivity() {
                 finish()
             }
         }
+
+        // Update achievement progress
+        updateAchievements(gameMode, countCorrect)
+
     }
 }

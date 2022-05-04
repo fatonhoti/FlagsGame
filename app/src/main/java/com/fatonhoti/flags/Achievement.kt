@@ -8,9 +8,10 @@ import androidx.room.PrimaryKey
 data class Achievement(
     @ColumnInfo(name="Title") val title: String,
     @ColumnInfo(name="Description") val description: String,
-    @ColumnInfo(name="Date") val date: String,
-    @ColumnInfo(name="Completed") val completed: String
-) {
-    @PrimaryKey(autoGenerate = true)
-    var id: Int = 1
-}
+    @ColumnInfo(name="GameMode") val gameMode: String,
+    @ColumnInfo(name="Date") var date: String,
+    @ColumnInfo(name="Progress") var progress: Int,
+    @ColumnInfo(name="Limit") var limit: Int,
+    @ColumnInfo(name="Completed") var completed: String,
+    @PrimaryKey(autoGenerate = true) var id: Int = 0
+)

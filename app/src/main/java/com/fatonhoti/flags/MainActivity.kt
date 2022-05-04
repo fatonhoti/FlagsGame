@@ -47,20 +47,6 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        /* //applicationContext.deleteDatabase("database-name")
-        val achievementDao = Room.databaseBuilder(
-                applicationContext,
-                AppDatabase::class.java,"database-name"
-            ).build().achievementDao()
-
-        GlobalScope.launch {
-            achievementDao.insertAll(Achievement("title1", "desc1", "date1", "false"))
-            achievementDao.insertAll(Achievement("title2", "desc2", "date2", "true"))
-            Log.i("database", achievementDao.getAll().toString())
-            Log.i("database", achievementDao.getAllComplete().toString())
-            Log.i("database", achievementDao.getAllIncomplete().toString())
-        }*/
-
         // Set relevant theme depending on phone's mode (LIGHT or DARK)
         val currentNightMode = (resources.configuration.uiMode
                 and Configuration.UI_MODE_NIGHT_MASK)
