@@ -42,6 +42,7 @@ class MyApplication : Application() {
         editor.putInt("Total guesses", 0)
         editor.putInt("Total correct guesses", 0)
         editor.putInt("Total incorrect guesses", 0)
+        editor.putFloat("Average correct guesses", 0.0f)
 
         // Flags
         editor.putInt("Flag games played", 0)
