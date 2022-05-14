@@ -31,6 +31,10 @@ import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import com.blongho.country_data.Country
 import com.blongho.country_data.World
+import com.fatonhoti.flags.gameModes.GameModeCapitalsActivity
+import com.fatonhoti.flags.gameModes.GameModeCurrenciesActivity
+import com.fatonhoti.flags.gameModes.GameModeFlagsActivity
+import com.fatonhoti.flags.gameModes.GameModeLanguagesActivity
 import com.google.android.material.slider.Slider
 import java.lang.Exception
 import java.util.ArrayList

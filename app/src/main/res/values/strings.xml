@@ -3,6 +3,7 @@
 
     <!-- GENERAL -->
     <string name="btnStart">Start</string>
+    <string name="btnStatistics">Statistics</string>
     <string name="btnAchievements">Achievements</string>
     <string name="btnBack">Go Back</string>
     <string name="btnMainMenu">Main Menu</string>

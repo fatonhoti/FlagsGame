@@ -26,20 +26,13 @@ package com.fatonhoti.flags
 
 import android.content.Intent
 import android.content.res.Configuration
-import android.media.session.MediaSession
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.widget.Button
 import androidx.appcompat.app.AppCompatDelegate
-import androidx.lifecycle.lifecycleScope
-import androidx.room.Database
-import androidx.room.Room
-import androidx.room.RoomDatabase
 import com.blongho.country_data.World
-import kotlinx.coroutines.GlobalScope
-import kotlinx.coroutines.launch
-import kotlin.coroutines.suspendCoroutine
+import com.fatonhoti.flags.gameModes.GameModesMenuActivity
+import com.fatonhoti.flags.statistics.StatisticsActivity
 
 class MainActivity : AppCompatActivity() {
 
@@ -72,7 +65,7 @@ class MainActivity : AppCompatActivity() {
 
         val btnAchievements = findViewById<Button>(R.id.btnAchievements)
         btnAchievements.setOnClickListener {
-            Intent(this, AchievementsActivity::class.java).also { startActivity(it) }
+            Intent(this, StatisticsActivity::class.java).also { startActivity(it) }
         }
 
         val btnSettings = findViewById<Button>(R.id.btnSettings)

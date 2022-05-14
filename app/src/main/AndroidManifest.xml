@@ -6,44 +6,47 @@
     <!-- large  => 7" tablets -->
     <!-- xLarge => 10" tablets -->
     <supports-screens
-        android:smallScreens="true"
         android:largeScreens="true"
+        android:smallScreens="true"
         android:xlargeScreens="true" />
 
     <application
+        android:name=".MyApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="false"
-        android:name=".MyApplication"
         android:theme="@style/Theme.Flags">
         <activity
-            android:name=".AchievementsActivity"
+            android:name=".statistics.StatisticsActivity"
             android:exported="false" />
         <activity
-            android:name=".GameModeFlagsActivity"
+            android:name=".achievement.AchievementsActivity"
             android:exported="false" />
         <activity
-            android:name=".GameModeCapitalsActivity"
+            android:name=".gameModes.GameModeFlagsActivity"
             android:exported="false" />
         <activity
-            android:name=".GameModeCurrenciesActivity"
+            android:name=".gameModes.GameModeCapitalsActivity"
             android:exported="false" />
         <activity
-            android:name=".GameModeLanguagesActivity"
+            android:name=".gameModes.GameModeCurrenciesActivity"
             android:exported="false" />
         <activity
-            android:name=".GameModeContinentsActivity"
+            android:name=".gameModes.GameModeLanguagesActivity"
             android:exported="false" />
         <activity
-            android:name=".GameModesMenuActivity"
+            android:name=".gameModes.GameModeContinentsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".gameModes.GameModesMenuActivity"
             android:exported="false" />
         <activity
             android:name=".SettingsActivity"
             android:exported="false" />
         <activity
-            android:name=".GameOverActivity"
+            android:name=".gameOver.GameOverActivity"
             android:exported="false" />
         <activity
             android:name=".GameLobbyActivity"

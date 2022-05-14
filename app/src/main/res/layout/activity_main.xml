@@ -80,7 +80,7 @@
         android:layout_marginTop="25dp"
         android:backgroundTint="?attr/colorPrimary"
         android:fontFamily="@font/raleway_bold"
-        android:text="@string/btnAchievements"
+        android:text="@string/btnStatistics"
         android:textAlignment="center"
         android:textColor="?attr/colorOnPrimary"
         android:textSize="30sp"
