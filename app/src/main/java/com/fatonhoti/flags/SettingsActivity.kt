@@ -33,8 +33,9 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.appcompat.app.AppCompatDelegate.MODE_NIGHT_NO
 import androidx.appcompat.app.AppCompatDelegate.MODE_NIGHT_YES
+import androidx.lifecycle.lifecycleScope
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
-import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
 class SettingsActivity : AppCompatActivity() {
@@ -69,7 +70,7 @@ class SettingsActivity : AppCompatActivity() {
     }
 
     private fun resetStatistics()  {
-        GlobalScope.launch {
+        lifecycleScope.launch(Dispatchers.IO) {
             val achievements = db.getAll()
             achievements.forEach {
                 it.progress = 0

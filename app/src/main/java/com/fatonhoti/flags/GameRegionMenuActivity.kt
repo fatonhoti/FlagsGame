@@ -34,8 +34,6 @@ class GameRegionMenuActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_game_region_menu)
 
-        // TODO: Investigate activity stack bug where when returning from game over screen and pressing the back button, you end up in this activtiy again.
-
         val gameMode = intent.getStringExtra("MODE")!!
         val btnRegions = listOf<Button>(
             findViewById(R.id.btnFlags),

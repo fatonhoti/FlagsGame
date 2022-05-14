@@ -27,7 +27,6 @@ package com.fatonhoti.flags.gameOver
 import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.widget.Button
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
@@ -37,9 +36,9 @@ import com.blongho.country_data.Country
 import com.blongho.country_data.World
 import com.fatonhoti.flags.*
 import com.fatonhoti.flags.gameModes.GameModesMenuActivity
-import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
-import java.lang.Exception
 import java.time.LocalDate
 
 
@@ -170,7 +169,7 @@ class GameOverActivity : AppCompatActivity() {
 
     @Suppress("UNCHECKED_CAST")
     private fun updateAchievements(gameMode: String, countCorrect: Int) {
-        GlobalScope.launch {
+        CoroutineScope(Dispatchers.IO).launch {
             val achievements = db.getAllGameMode(gameMode)
             achievements.forEach {
                 it.progress += countCorrect

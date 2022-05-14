@@ -1,13 +1,13 @@
 package com.fatonhoti.flags
 
 import android.app.Application
-import android.util.Log
 import androidx.room.Room
 import androidx.room.RoomDatabase
 import androidx.sqlite.db.SupportSQLiteDatabase
 import com.fatonhoti.flags.achievement.Achievement
 import com.fatonhoti.flags.achievement.AchievementDAO
-import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
 
@@ -281,9 +281,10 @@ class MyApplication : Application() {
                         )
                     )
 
-                    GlobalScope.launch {
+                    CoroutineScope(Dispatchers.IO).launch {
                         instance!!.getDbAchievements().insertAll(items)
                     }
+
                 }
             })
             .build().achievementDao()

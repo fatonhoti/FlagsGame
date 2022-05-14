@@ -45,7 +45,7 @@ class GameModeCardAdapter(private val cards: MutableList<GameModeCard>) : Recycl
                 }
             }
             holder.context.startActivity(i)
-            //(holder.context as Activity).finish()
+            (holder.context as Activity).finish()
         }
     }
 

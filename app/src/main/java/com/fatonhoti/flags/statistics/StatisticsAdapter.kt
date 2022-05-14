@@ -32,9 +32,7 @@ class StatisticsAdapter(private val cards: MutableList<StatisticCard>) : Recycle
         if(cards[position].gameMode == "General statistics") {
             holder.tvGameMode.text = SpannableStringBuilder().bold { append(cards[position].gameMode) }
         }else {
-            holder.tvGameMode.text = SpannableStringBuilder()
-                .bold{append("Game mode: ")}
-                .append(cards[position].gameMode)
+            holder.tvGameMode.text = SpannableStringBuilder().bold { append(cards[position].gameMode) }
         }
         holder.tvGamesPlayed.text = SpannableStringBuilder()
             .bold{append("Games played: ")}
