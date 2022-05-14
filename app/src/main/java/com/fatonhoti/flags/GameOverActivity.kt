@@ -27,6 +27,7 @@ package com.fatonhoti.flags
 import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.widget.Button
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
@@ -58,7 +59,7 @@ class GameOverActivity : AppCompatActivity() {
                     World.Continent.ANTARCTICA -> { resources.getIdentifier("antarctica", defType, defPackage) }
                     World.Continent.OCEANIA -> { resources.getIdentifier("oceania", defType, defPackage) }
                 }
-                items.add(GameOverResultCard(it.key.name, it.key.name, it.value, flag))
+                items.add(GameOverResultCard(it.key.name.replace("_", " "), it.key.name.replace("_", " "), it.value.replace("_", " "), flag))
             }
         } else {
             (guesses as HashMap<Country, String>).forEach {

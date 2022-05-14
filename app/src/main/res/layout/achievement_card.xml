@@ -12,15 +12,17 @@
         android:layout_margin="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        app:strokeColor="@color/white"
+        app:strokeWidth="1dp">
 
         <LinearLayout
             android:id="@+id/tvAchievement"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="?attr/colorPrimary"
+            android:background="?attr/colorSecondary"
             android:orientation="vertical"
-            android:padding="16dp">
+            android:padding="16dp" >
 
             <!-- Title, description and date -->
             <TextView

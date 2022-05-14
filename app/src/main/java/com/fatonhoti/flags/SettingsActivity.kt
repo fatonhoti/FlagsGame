@@ -33,8 +33,13 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.appcompat.app.AppCompatDelegate.MODE_NIGHT_NO
 import androidx.appcompat.app.AppCompatDelegate.MODE_NIGHT_YES
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.launch
 
 class SettingsActivity : AppCompatActivity() {
+
+    private var db = MyApplication.applicationContext().getDbAchievements()
 
     @SuppressLint("UseSwitchCompatOrMaterialCode")
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -53,9 +58,27 @@ class SettingsActivity : AppCompatActivity() {
 
         val btnClearStatistics = findViewById<Button>(R.id.btnClearStatistics)
         btnClearStatistics.setOnClickListener {
-            Toast.makeText(this, "This function has not been implemented yet.", Toast.LENGTH_SHORT).show()
+            MaterialAlertDialogBuilder(this)
+                .setTitle(resources.getString(R.string.GoBackDialogTitle))
+                .setMessage("Pressing YES will reset all statistics and achievements!")
+                .setNegativeButton(resources.getString(R.string.GoBackDialogCancel)) { _, _ -> }
+                .setPositiveButton(resources.getString(R.string.GoBackDialogYes)) { _, _ -> resetStatistics() }
+                .show()
         }
 
+    }
+
+    private fun resetStatistics()  {
+        GlobalScope.launch {
+            val achievements = db.getAll()
+            achievements.forEach {
+                it.progress = 0
+                it.completed = "false"
+                it.date = "Not completed yet"
+                db.updateAchievement(it)
+            }
+        }
+        Toast.makeText(this, "All statistics and achievements have been reset.", Toast.LENGTH_LONG).show()
     }
 
 }

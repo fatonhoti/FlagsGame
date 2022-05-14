@@ -26,7 +26,7 @@ class MyApplication : Application() {
 
     override fun onCreate() {
         super.onCreate()
-        //deleteDatabase("db_achievements") //USE ONLY FOR DEBUG
+        deleteDatabase("db_achievements") //USE ONLY FOR DEBUG
         initializeDatabase()
     }
 
@@ -50,7 +50,7 @@ class MyApplication : Application() {
                             "Novice Flag Guesser",
                             "You have correctly guessed 10 flags.",
                             "FLAGS",
-                            "NotDone",
+                            "Not completed yet",
                             0,
                             10,
                             "false"
@@ -59,7 +59,7 @@ class MyApplication : Application() {
                             "Advanced Beginner Flag Guesser",
                             "You have correctly guessed 100 flags.",
                             "FLAGS",
-                            "NotDone",
+                            "Not completed yet",
                             0,
                             100,
                             "false"
@@ -68,7 +68,7 @@ class MyApplication : Application() {
                             "Competent Flag Guesser",
                             "You have correctly guessed 200 flags.",
                             "FLAGS",
-                            "NotDone",
+                            "Not completed yet",
                             0,
                             200,
                             "false"
@@ -77,7 +77,7 @@ class MyApplication : Application() {
                             "Proficient Flag Guesser",
                             "You have correctly guessed 500 flags.",
                             "FLAGS",
-                            "NotDone",
+                            "Not completed yet",
                             0,
                             500,
                             "false"
@@ -86,7 +86,7 @@ class MyApplication : Application() {
                             "Expert Flag Guesser",
                             "You have correctly guessed 1000 flags.",
                             "FLAGS",
-                            "NotDone",
+                            "Not completed yet",
                             0,
                             1000,
                             "false"
@@ -95,7 +95,7 @@ class MyApplication : Application() {
                             "Novice Capital Guesser",
                             "You have correctly guessed 10 capitals.",
                             "CAPITALS",
-                            "NotDone",
+                            "Not completed yet",
                             0,
                             10,
                             "false"
@@ -104,7 +104,7 @@ class MyApplication : Application() {
                             "Advanced Beginner Capital Guesser",
                             "You have correctly guessed 100 capitals.",
                             "CAPITALS",
-                            "NotDone",
+                            "Not completed yet",
                             0,
                             100,
                             "false"
@@ -113,7 +113,7 @@ class MyApplication : Application() {
                             "Competent Capital Guesser",
                             "You have correctly guessed 200 capitals.",
                             "CAPITALS",
-                            "NotDone",
+                            "Not completed yet",
                             0,
                             200,
                             "false"
@@ -122,7 +122,7 @@ class MyApplication : Application() {
                             "Proficient Capital Guesser",
                             "You have correctly guessed 500 capitals.",
                             "CAPITALS",
-                            "NotDone",
+                            "Not completed yet",
                             0,
                             500,
                             "false"
@@ -131,7 +131,7 @@ class MyApplication : Application() {
                             "Expert Capital Guesser",
                             "You have correctly guessed 1000 capitals.",
                             "CAPITALS",
-                            "NotDone",
+                            "Not completed yet",
                             0,
                             1000,
                             "false"
@@ -140,7 +140,7 @@ class MyApplication : Application() {
                             "Novice Language Guesser",
                             "You have correctly guessed 10 languages.",
                             "LANGUAGES",
-                            "NotDone",
+                            "Not completed yet",
                             0,
                             10,
                             "false"
@@ -149,7 +149,7 @@ class MyApplication : Application() {
                             "Advanced Beginner Language Guesser",
                             "You have correctly guessed 100 languages.",
                             "LANGUAGES",
-                            "NotDone",
+                            "Not completed yet",
                             0,
                             100,
                             "false"
@@ -158,7 +158,7 @@ class MyApplication : Application() {
                             "Competent Language Guesser",
                             "You have correctly guessed 200 languages.",
                             "LANGUAGES",
-                            "NotDone",
+                            "Not completed yet",
                             0,
                             200,
                             "false"
@@ -167,7 +167,7 @@ class MyApplication : Application() {
                             "Proficient Language Guesser",
                             "You have correctly guessed 500 languages.",
                             "LANGUAGES",
-                            "NotDone",
+                            "Not completed yet",
                             0,
                             500,
                             "false"
@@ -176,7 +176,7 @@ class MyApplication : Application() {
                             "Expert Language Guesser",
                             "You have correctly guessed 1000 languages.",
                             "LANGUAGES",
-                            "NotDone",
+                            "Not completed yet",
                             0,
                             1000,
                             "false"
@@ -185,7 +185,7 @@ class MyApplication : Application() {
                             "Novice Currency Guesser",
                             "You have correctly guessed 10 currencies.",
                             "CURRENCIES",
-                            "NotDone",
+                            "Not completed yet",
                             0,
                             10,
                             "false"
@@ -194,7 +194,7 @@ class MyApplication : Application() {
                             "Advanced Beginner Currency Guesser",
                             "You have correctly guessed 100 currencies.",
                             "CURRENCIES",
-                            "NotDone",
+                            "Not completed yet",
                             0,
                             100,
                             "false"
@@ -203,7 +203,7 @@ class MyApplication : Application() {
                             "Competent Currency Guesser",
                             "You have correctly guessed 200 currencies.",
                             "CURRENCIES",
-                            "NotDone",
+                            "Not completed yet",
                             0,
                             200,
                             "false"
@@ -212,7 +212,7 @@ class MyApplication : Application() {
                             "Proficient Currency Guesser",
                             "You have correctly guessed 500 currencies.",
                             "CURRENCIES",
-                            "NotDone",
+                            "Not completed yet",
                             0,
                             500,
                             "false"
@@ -221,7 +221,7 @@ class MyApplication : Application() {
                             "Expert Currency Guesser",
                             "You have correctly guessed 1000 currencies.",
                             "CURRENCIES",
-                            "NotDone",
+                            "Not completed yet",
                             0,
                             1000,
                             "false"
