@@ -37,6 +37,10 @@ class AchievementsAdapter(private val cards: MutableList<AchievementCard>) : Rec
             holder.tvAchievement.setBackgroundColor(ContextCompat.getColor(context,
                 R.color.primaryColor
             ))
+            holder.tvTitle.setTextColor(ContextCompat.getColor(context, R.color.white))
+            holder.tvDescription.setTextColor(ContextCompat.getColor(context, R.color.white))
+            holder.tvDate.setTextColor(ContextCompat.getColor(context, R.color.white))
+            holder.tvProgress.setTextColor(ContextCompat.getColor(context, R.color.white))
         }
 
         holder.tvTitle.text = card.title

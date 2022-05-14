@@ -31,7 +31,7 @@ class StatisticsActivity : AppCompatActivity() {
                 sharedPref.getInt("Flags guessed", 0),
                 sharedPref.getInt("Correct flags guessed", 0),
                 sharedPref.getInt("Incorrect flags guessed", 0),
-                sharedPref.getFloat("Average correct guesses (flags)", 5.0f)
+                sharedPref.getFloat("Average correct guesses (flags)", 0.0f)
             ),
             // Capitals
             StatisticCard("Capitals",
