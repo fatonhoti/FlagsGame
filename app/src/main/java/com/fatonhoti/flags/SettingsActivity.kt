@@ -70,6 +70,57 @@ class SettingsActivity : AppCompatActivity() {
     }
 
     private fun resetStatistics()  {
+
+        // Reset statistics
+        val sharedPref = getSharedPreferences("statistics", MODE_PRIVATE)
+        val editor = sharedPref.edit()
+
+        // General statistics
+        editor.putInt("Total games played", 0)
+        editor.putInt("Total guesses", 0)
+        editor.putInt("Total correct guesses", 0)
+        editor.putInt("Total incorrect guesses", 0)
+        editor.putFloat("Average correct guesses", 0.0f)
+
+        // Flags
+        editor.putInt("Flag games played", 0)
+        editor.putInt("Flags guessed", 0)
+        editor.putInt("Correct flags guessed", 0)
+        editor.putInt("Incorrect flags guessed", 0)
+        editor.putFloat("Average correct guesses (flags)", 0.0f)
+
+        // Capitals
+        editor.putInt("Capital games played", 0)
+        editor.putInt("Capitals guessed", 0)
+        editor.putInt("Correct capitals guessed", 0)
+        editor.putInt("Incorrect capitals guessed", 0)
+        editor.putFloat("Average correct guesses (capitals)", 0.0f)
+
+        // Currencies
+        editor.putInt("Currency games played", 0)
+        editor.putInt("Currencies guessed", 0)
+        editor.putInt("Correct currencies guessed", 0)
+        editor.putInt("Incorrect currencies guessed", 0)
+        editor.putFloat("Average correct guesses (currencies)", 0.0f)
+
+        // Languages
+        editor.putInt("Language games played", 0)
+        editor.putInt("Languages guessed", 0)
+        editor.putInt("Correct languages guessed", 0)
+        editor.putInt("Incorrect languages guessed", 0)
+        editor.putFloat("Average correct guesses (languages)", 0.0f)
+
+        // Continents
+        editor.putInt("Continent games played", 0)
+        editor.putInt("Continents guessed", 0)
+        editor.putInt("Correct continents guessed", 0)
+        editor.putInt("Incorrect continents guessed", 0)
+        editor.putFloat("Average correct guesses (continents)", 0.0f)
+
+        // Apply changes
+        editor.apply()
+
+        // Reset achievements
         lifecycleScope.launch(Dispatchers.IO) {
             val achievements = db.getAll()
             achievements.forEach {
