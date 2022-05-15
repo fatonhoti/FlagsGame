@@ -40,12 +40,13 @@ class AchievementsAdapter(private val cards: MutableList<AchievementCard>) : Rec
             holder.tvTitle.setTextColor(ContextCompat.getColor(context, R.color.white))
             holder.tvDescription.setTextColor(ContextCompat.getColor(context, R.color.white))
             holder.tvDate.setTextColor(ContextCompat.getColor(context, R.color.white))
+            holder.tvDate.text = "Unlocked "
             holder.tvProgress.setTextColor(ContextCompat.getColor(context, R.color.white))
         }
 
         holder.tvTitle.text = card.title
         holder.tvDescription.text = card.description
-        holder.tvDate.text = card.date
+        holder.tvDate.text = holder.tvDate.text.toString() + card.date
         holder.tvProgress.text = card.progress.toString() + "/" + card.limit.toString()
     }
 

@@ -25,7 +25,7 @@
                 android:id="@+id/ivCountryFlag"
                 android:layout_width="match_parent"
                 android:layout_height="194dp"
-                android:contentDescription="TODO"
+                android:contentDescription="@string/image_country_flag"
                 android:scaleType="centerCrop"
                 app:srcCompat="@drawable/xk" />
 

@@ -25,7 +25,7 @@
                 android:id="@+id/ivCountryFlag"
                 android:layout_width="match_parent"
                 android:layout_height="194dp"
-                android:contentDescription="TODO"
+                android:contentDescription="@string/image_country_flag"
                 android:scaleType="centerCrop"
                 app:srcCompat="@drawable/xk" />
 
@@ -43,7 +43,7 @@
                     android:layout_height="wrap_content"
                     android:textAppearance="?attr/textAppearanceHeadline6"
                     android:textColor="?attr/colorOnPrimary"
-                    android:textSize="35dp" />
+                    android:textSize="35sp" />
 
                 <TextView
                     android:id="@+id/tvCorrect"
@@ -52,7 +52,7 @@
                     android:layout_marginTop="8dp"
                     android:textAppearance="?attr/textAppearanceBody2"
                     android:textColor="?attr/colorOnPrimary"
-                    android:textSize="30dp"/>
+                    android:textSize="30sp"/>
 
                 <TextView
                     android:id="@+id/tvIncorrect"
@@ -61,7 +61,7 @@
                     android:layout_marginTop="8dp"
                     android:textAppearance="?attr/textAppearanceBody2"
                     android:textColor="?attr/colorOnPrimary"
-                    android:textSize="30dp"/>
+                    android:textSize="30sp"/>
 
             </LinearLayout>
 

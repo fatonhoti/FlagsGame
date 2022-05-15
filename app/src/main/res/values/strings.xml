@@ -57,5 +57,6 @@
     <string name="GoBackDialogSupportingText">Going back will lose you all progress!</string>
     <string name="GoBackDialogYes">Yes</string>
     <string name="GoBackDialogCancel">Cancel</string>
+    <string name="image_country_flag">image_of_a_countries_flag</string>
 
 </resources>
