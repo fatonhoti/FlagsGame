@@ -25,11 +25,11 @@ class GameModesMenuActivity : AppCompatActivity() {
         val currencies = GameModeCard("CURRENCIES", "Surely you don't know all the currencies...", currenciesImage)
         items.add(currencies)
 
-        val languagesImage = resources.getIdentifier("game_mode_currencies_image", "drawable", "com.fatonhoti.flags")
+        val languagesImage = resources.getIdentifier("game_mode_languages_image", "drawable", "com.fatonhoti.flags")
         val languages = GameModeCard("LANGUAGES", "Surely you don't know all the currencies...", languagesImage)
         items.add(languages)
 
-        val continentsImage = resources.getIdentifier("game_mode_currencies_image", "drawable", "com.fatonhoti.flags")
+        val continentsImage = resources.getIdentifier("game_mode_continents_image", "drawable", "com.fatonhoti.flags")
         val continents = GameModeCard("CONTINENTS", "Surely you don't know all the currencies...", continentsImage)
         items.add(continents)
 
