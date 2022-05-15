@@ -9,6 +9,7 @@ import android.widget.TextView
 import androidx.core.text.bold
 import androidx.recyclerview.widget.RecyclerView
 import com.fatonhoti.flags.R
+import kotlin.math.roundToInt
 
 class StatisticsAdapter(private val cards: MutableList<StatisticCard>) : RecyclerView.Adapter<StatisticsAdapter.ViewHolder>() {
 
@@ -48,7 +49,7 @@ class StatisticsAdapter(private val cards: MutableList<StatisticCard>) : Recycle
             .append(cards[position].incorrectGuesses.toString())
         holder.tvAverage.text = SpannableStringBuilder()
             .bold{append("Average correct: ")}
-            .append(cards[position].averageCorrect.toString())
+            .append(cards[position].averageCorrect.roundToInt().toString() + "%")
     }
 
     override fun getItemCount(): Int {

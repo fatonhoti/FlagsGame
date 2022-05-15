@@ -28,7 +28,7 @@ class MyApplication : Application() {
 
     override fun onCreate() {
         super.onCreate()
-        //deleteDatabase("db_achievements") //USE ONLY FOR DEBUG
+        deleteDatabase("db_achievements") //USE ONLY FOR DEBUG
         initializeStatistics()
         initializeAchievementDatabase()
     }

@@ -149,7 +149,7 @@ class GameOverActivity : AppCompatActivity() {
         editor.putInt("Total guesses", totalGuesses + countCorrect + countIncorrect)
         editor.putInt("Total correct guesses", totalCorrectGuesses + countCorrect)
         editor.putInt("Total incorrect guesses", totalIncorrectGuesses + countIncorrect)
-        editor.putFloat("Average correct guesses", (totalCorrectGuesses + countCorrect) * 100.0f / (totalGuesses + countIncorrect + countIncorrect))
+        editor.putFloat("Average correct guesses", (totalCorrectGuesses + countCorrect) * 100.0f / (totalGuesses + countCorrect + countIncorrect))
 
         // Game mode specific
         val gamesPlayed = sharedPref.getInt("$a games played", 0)
