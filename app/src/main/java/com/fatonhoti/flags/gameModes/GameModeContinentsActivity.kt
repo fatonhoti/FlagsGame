@@ -3,6 +3,7 @@ package com.fatonhoti.flags.gameModes
 import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
@@ -70,12 +71,23 @@ class GameModeContinentsActivity: AppCompatActivity(), GameMode {
     }
 
     override fun checkGuess(guess: String) {
-        if(guess == selectedContinent.name) {
+        val g: String = when (guess) {
+            "NORTH AMERICA" -> {
+                "NORTH_AMERICA";
+            }
+            "SOUTH AMERICA" -> {
+                "SOUTH_AMERICA";
+            }
+            else -> {
+                guess;
+            }
+        }
+        if(g == selectedContinent.name) {
             correct++
-            userGuesses[selectedContinent] = guess
+            userGuesses[selectedContinent] = g
         } else {
             incorrect++
-            userGuesses[selectedContinent] = guess
+            userGuesses[selectedContinent] = g
         }
     }
 

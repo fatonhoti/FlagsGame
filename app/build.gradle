@@ -21,7 +21,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.fatonhoti.flags"
+        applicationId 'com.fatonhoti.flags'
         targetSdk 32
         versionCode 1
         versionName '1.0'
